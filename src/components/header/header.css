@@ -1,0 +1,82 @@
+/* ナビゲーションバー自体の設定 */
+.App-navbar {
+    background-color:rgba(102, 51, 153, 0.603);
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+.App-navbar > :first-child {
+    margin-right: auto;
+}
+
+.App-navbar > .App-navbar-item {
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.App-navbar  .App-logo{
+    padding : 5px 20px;
+    display: block;
+}
+
+.App-navbar  .App-logo[title="home"]{
+    padding : 5px 20px;
+    display: none;
+}
+
+/* ナビゲーションバー左端のロゴのリンク */
+.App-navbar p a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.0;
+}
+
+.App-navbar-item ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-top: 9px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.App-navbar-item ul li {
+    list-style: none;
+    width: 100px;
+    margin-right: 5px;
+
+}
+
+.App-navbar-item ul li :hover{
+    background-color: rgba(255, 255, 255, 0.123);
+    color: white;
+}
+
+/* ナビゲーションバーのリンクのスタイル 
+   アクティブ時と差分がない物だけ以下に記述
+*/
+.App-navbar-item ul li a {
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 2.0;
+    text-align: center;
+    display: block;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.App-navbar-item ul li> .active {
+    background-color: rgba(255, 255, 255, 0.123);
+    border: 2px solid rgb(217, 189, 228);
+}
