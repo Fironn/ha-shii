@@ -15,30 +15,30 @@ const Contact = () => {
 
   const info = [
     {
-      icon: ['fas', 'envelope'],
-      description: 'shihomihashi@gmail.com',
-      link: 'mailto:shihomihashi@gmail.com',
-    },
-    {
       icon: ['fab', 'github-square'],
-      description: 'github.com/Fironn',
+      description: 'github',
       link: 'https://github.com/Fironn',
     },
     {
       icon: ['fab', 'facebook-square'],
-      description: 'facebook.com/shihomi.hashimoto.35',
+      description: 'facebook',
       link: 'https://www.facebook.com/shihomi.hashimoto.35',
     },
     {
-      icon: ['fab', 'twitter-square'],
-      description: 'twitter.com/firon_',
-      link: 'https://twitter.com/firon_',
+      icon: ['fas', 'envelope'],
+      description: 'shihomihashi@gmail.com',
+      link: 'mailto:shihomihashi@gmail.com',
     },
+    // {
+    //   icon: ['fab', 'twitter-square'],
+    //   description: 'twitter',
+    //   link: 'https://twitter.com/ha_shii_',
+    // },
   ];
 
   return (
     <Layout page="Contact">
-      <Top title="Contact" />
+      {/* <Top title="Contact" /> */}
       <SEO title="Contact" />
       <div title="contact" className={styles.detail}>
         <div className={styles.links}>
@@ -53,7 +53,8 @@ const Contact = () => {
           ))}
         </div>
         <div className={styles.twitter}>
-          <a class="twitter-timeline" data-chrome="transparent nofooter" data-height="600" data-theme="dark" href="https://twitter.com/firon_?ref_src=twsrc%5Etfw">Tweets by firon_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-chrome="transparent nofooter" data-height="400" data-theme="dark" href="https://twitter.com/ha_shii_?ref_src=twsrc%5Etfw">Tweets by ha_shii_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
         </div>
       </div>
     </Layout>

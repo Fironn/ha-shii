@@ -2,3 +2,8 @@ body{
     color: white;
     text-align: center;
 }
+
+main[page="home"]{
+    display: flex;
+    flex-flow: row wrap;
+}

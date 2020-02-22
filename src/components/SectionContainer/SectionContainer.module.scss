@@ -1,8 +1,38 @@
 .container {
-    display: block;
+    // display: block;
     align-items: center;
-    width:100%;
-    min-height: 100vh;
-    padding:80px 20px;
+    min-height: 94vh;
+    padding:90px 20px 20px;
     background-color: rgba(0, 0, 0, 0.075);
+}
+
+.container[id="about"] {
+    // display: block;
+    align-items: center;
+    min-height: 94vh;
+    padding:90px 20px 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+// .container[id="contact"] {
+//     // display: block;
+//     min-height: 94vh;
+//     padding:90px 0 20px;
+//     background-color: rgb(255, 255, 255);
+// }
+
+section{
+    flex: 4 4 425px !important;
+    min-width: 425px !important;
+}
+
+section[id="about"]{
+    flex: 3 3 450px !important;
+    min-width: 450px !important;
+}
+
+section[id="contact"]{
+    flex: none none none !important;
+    min-width: 15px !important;
+    padding:0 !important;
 }

@@ -1,19 +1,19 @@
 #graph{
     background-color: rgba(214, 214, 214, 0.445);
-    height: 400px;
+    height: 440px;
     text-align: left;
     margin: 0;
-    border-top: solid 1px white;
+    // border-top: solid 1px white;
     overflow: hidden;
 
     #graph-canvas{
         position: relative;
+        margin: 40px 0 0;
         height: 400px;
         left: 300px;
-        height: 400px;
 
         div{
-            height: 400px;
+            height: 440px;
             overflow: hidden;
         }
 
@@ -25,7 +25,7 @@
     #graph-tag{
         line-height: initial;
         background-color: rgb(190, 134, 134);
-        height: 400px;
+        height: 440px;
         width: 300px;
         position: absolute;
         left: 0;

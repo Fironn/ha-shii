@@ -18,22 +18,23 @@ const Header = ({ page, siteTitle }) => {
   // ナビゲーションバーに表示するリンク
   const NavMenu = ["Projects", "Blogs", "Contact"];
 
-  let scrollPosition = 0;
+  // スクロール設定
+  // let scrollPosition = 0;
 
-  const onScroll = () => {
-    if (page === "home") {
-      if (scrollPosition >= window.innerHeight) document.getElementsByClassName("App-logo")[0].style.display = "block";
-      else document.getElementsByClassName("App-logo")[0].style.display = "none";
-    } else document.getElementsByClassName("App-logo")[0].style.display = "block";
-  };
-  if (typeof window !== 'undefined') {
-    window.addEventListener("scroll", () => {
-      if (page === "home") {
-        scrollPosition = window.scrollY;
-        onScroll();
-      } else document.getElementsByClassName("App-logo")[0].style.display = "block";
-    });
-  }
+  // const onScroll = () => {
+  //   if (page === "home") {
+  //     if (scrollPosition >= window.innerHeight) document.getElementsByClassName("App-logo")[0].style.display = "block";
+  //     else document.getElementsByClassName("App-logo")[0].style.display = "none";
+  //   } else document.getElementsByClassName("App-logo")[0].style.display = "block";
+  // };
+  // if (typeof window !== 'undefined') {
+  //   window.addEventListener("scroll", () => {
+  //     if (page === "home") {
+  //       scrollPosition = window.scrollY;
+  //       onScroll();
+  //     } else document.getElementsByClassName("App-logo")[0].style.display = "block";
+  //   });
+  // }
   // ナビゲーションリンクの作成
   const NavMenuLiTag = NavMenu.map((item) => {
     let page_link = "";
@@ -55,8 +56,9 @@ const Header = ({ page, siteTitle }) => {
 
   return (
     <header className="App-header">
-      <nav className="App-navbar">
+      <nav className="App-navbar" title={page}>
         <p className="App-logo" title={page}><Link to="/" >{siteTitle}</Link></p>
+        <p className="App-page" title={page}>{page}</p>
         <div className="App-navbar-item">
           <ul>
             {NavMenuLiTag}

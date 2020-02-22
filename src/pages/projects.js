@@ -10,10 +10,10 @@ import Image from '../components/image'
 const Projects = ({ data }) => {
   return (
     <Layout page="projects">
-      <Top title="Projects" />
+      {/* <Top title="Projects" /> */}
       <SEO title="Projects" />
       <Chart className={styles.chart} data={data} />
-      <div className={styles.detail}>
+      <div className={styles.detail} title="projects">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         <div className={styles.lists}>
           {data.allMarkdownRemark.edges.map(({ node }) => {

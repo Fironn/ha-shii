@@ -8,7 +8,7 @@ import styles from '../styles/pages.module.scss'
 const Blogs = ({ data }) => {
   return (
     <Layout page="blogs">
-      <Top title="Blogs" />
+      {/* <Top title="Blogs" /> */}
       <SEO title="Blogs" />
       <div className={styles.detail}>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>

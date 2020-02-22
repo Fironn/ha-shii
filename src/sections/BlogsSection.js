@@ -30,6 +30,9 @@ const BlogsSection = () => {
   return (
     <SectionContainer id="blogs">
       <SectionHeader text="blogs" />
+      <Link to="/blogs/" className={styles.link}>
+        see more
+      </Link>
       <div className={styles.lists}>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.main === 1) return (
@@ -49,9 +52,6 @@ const BlogsSection = () => {
           );
         })}
       </div>
-      <Link to="/blogs/" className={styles.link}>
-        more
-      </Link>
     </SectionContainer>
   );
 };

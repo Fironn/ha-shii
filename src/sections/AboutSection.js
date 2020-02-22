@@ -20,6 +20,7 @@ import iconVscode from '../images/vscode.png';
 
 const AboutSection = () => {
   return (
+    // <section id="about" className={styles.container}>
     <SectionContainer id="about">
       <SectionHeader text="about" />
       <div className={styles.profile}>

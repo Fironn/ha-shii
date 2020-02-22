@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import SectionContainer from '../components/SectionContainer';
 
 const FooterSection = () => {
   library.add(fab);
@@ -13,43 +14,44 @@ const FooterSection = () => {
 
   const info = [
     {
-      icon: ['fas', 'envelope'],
-      description: 'shihomihashi@gmail.com',
-      link: 'mailto:shihomihashi@gmail.com',
-    },
-    {
       icon: ['fab', 'github-square'],
-      description: 'github.com/Fironn',
+      description: 'github',
       link: 'https://github.com/Fironn',
     },
     {
       icon: ['fab', 'facebook-square'],
-      description: 'facebook.com/shihomi.hashimoto.35',
+      description: 'facebook',
       link: 'https://www.facebook.com/shihomi.hashimoto.35',
     },
     {
-      icon: ['fab', 'twitter-square'],
-      description: 'twitter.com/firon_',
-      link: 'https://twitter.com/firon_',
+      icon: ['fas', 'envelope'],
+      description: 'shihomihashi@gmail.com',
+      link: 'mailto:shihomihashi@gmail.com',
     },
+    // {
+    //   icon: ['fab', 'twitter-square'],
+    //   description: 'twitter',
+    //   link: 'https://twitter.com/ha_shii_',
+    // },
   ];
 
   return (
     <section id="contact" className={styles.container + " " + styles.bottom}>
-      <SectionHeader text="contact" />
-      <div className={styles.container + " " + styles.bottom}>
-        <div className={styles.contactLinks}>
-          {info.map(info => (
-            <div className={styles.contactLink} >
-              <a href={info.link}
-                key={info.description}>
-                <FontAwesomeIcon icon={info.icon} className={styles.icon} />
-                <p>{info.description}</p>
-              </a>
-            </div>
-          ))}
-        </div>
+      {/* <SectionContainer id="contact"> */}
+      {/* <SectionHeader text="contact" /> */}
+      <div className={styles.contactLinks}>
+        {info.map(info => (
+          <div className={styles.contactLink} >
+            <a href={info.link}
+              key={info.description}>
+              <FontAwesomeIcon icon={info.icon} className={styles.icon} />
+              {/* <p>{info.description}</p> */}
+            </a>
+          </div>
+        ))}
       </div>
+      <div className={styles.contactBackground}></div>
+      {/* </SectionContainer> */}
     </section>
   );
 };

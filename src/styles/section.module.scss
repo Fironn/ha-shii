@@ -1,13 +1,9 @@
 .container {
-    display: block;
-    flex: column;
-    align-items: center;
-    background-color: white;
+    // display: block;
+    // align-items: center;
 }
 
 .top {
-    padding: 80px 0;
-    height: 100vh;
     color: black;
 
     div {
@@ -28,37 +24,56 @@
     }
 }
 
+.bottom {
+    top:0;
+    right: 0;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    z-index: 99996;
+
+    .contactBackground{
+        background-color: rgba(0, 0, 0, 0.295);
+        width: 8px;
+        position: absolute;
+        right: 0;
+        top:0;
+        height: 100%;
+    }
+}
+
 .profile{
     width: 100%;
     position: relative;
     padding: auto;
-    margin: 60px 0;
-    display: flex;
-    flex-flow: row wrap;
+    margin: 40px 0 100px;
+    // display: flex;
+    // flex-flow: row wrap;
 	justify-content: center;
 
     .profileDetails{
         color: black;
-        width: 500px;
-        height: 100%;
-        padding: 5px 40px;
+        height: 120px;
+        padding: 20px 0;
         margin: 0;
-        float: grow 1 shrink 1;
+        // float: grow 1 shrink 1;
         vertical-align: middle;
+        text-align: center;
     }
 
-    @media screen and (max-width:690px){
-        .profileDetails{
-            padding: 40px;
-            text-align: center;
-        }
-    }
+    // @media screen and (max-width:690px){
+    //     .profileDetails{
+    //         padding: 40px;
+    //         text-align: center;
+    //     }
+    // }
     
     .icon{
-        float: grow 1 shrink 1;
-        width: 150px;
+        // float: grow 1 shrink 1;
+        width: 120px;
         margin: 0;
-        height: 150px;
+        height: 120px;
         object-fit: cover;
         background-color: rgb(184, 184, 184);
         border-radius: 100px;
@@ -68,51 +83,37 @@
 .skills{
     color: black;
     width: 100%;
-    position: relative;
+
+    ul{
+        margin: 0;
+        padding: 0;
+    }
 
     img{
-        height: 50px;
+        height: 30px;
         width: auto;
         object-fit: cover;
-        margin: 8px;
+        margin: 2px;
     }
 
     .bigger{
-        margin: 0 5px;
-        height: 100px;
+        margin: 0 1px;
+        height: 45px;
         width: auto;
         object-fit: cover;
-    }
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    margin: auto;
-    grid-auto-rows: 400px;
-
-    div {
-        color: black;
-        padding: 30px;
-        border: 2px black solid;
-        border-radius: 15px;
-        background-color: rgba(255, 255, 255, 0.507);
-        height: 100%;
-        width: 100%;
     }
 }
 
 .lists{
     display: flex;
-    margin: 10px auto;
+    margin: 15px auto;
     flex-flow: row wrap;
 	justify-content: center;
 
     .list{
         width: 300px;
-        height: 400px;
-        margin: 25px 8px;
+        height: 220px;
+        margin: 15px 8px;
         vertical-align: middle;
         border: solid 1px rgba(255, 255, 255, 0.247);
         background-color: rgb(223, 223, 223);
@@ -133,7 +134,7 @@
 
         h3{
             margin: 10px;
-            padding: 10px 0;
+            padding: 0 0 10px;
             position: relative;
             text-align: center;
             top:10px;
@@ -142,13 +143,13 @@
 
         .date{
             color: black;
-            margin: 20px 10px 0;
+            margin: 0 10px;
             font-size: 12px;
         }
 
         .small{
             color: black;
-            margin: 5px 10px 10px;
+            margin: 0 10px;
             font-size: 16px;
         }
     }
@@ -159,59 +160,67 @@
 }
 
 .link {
-    background-color: rgba(140, 53, 177, 0.616);
-    font-size: 20px;
-    border: 1px solid rgb(194, 194, 194);
-    border-radius: 7px;
-    box-shadow: 0 1px 3px 0 rgb(0, 0, 0), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
-    color: rgba(255, 255, 255, 0.651);
-    display: block;
-    margin: 40px auto;
-    outline: none;
-    padding: 5px 0;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 800;
-    width: 300px;
+    position: relative;
+    left: 110px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.651);
+    // text-decoration: none;
+}
+
+.link::before {
+    content: ">";
+    color: black;
+    font-size: 10px;
+    padding: 1px 8px 0;
 }
 
 .link:hover{
-    background-color: rgba(0, 0, 0, 0.151);
-    color: rgb(255, 255, 255);
+    color: rgb(131, 67, 67);
     cursor: pointer;
 }
 
-.bottom {
-    padding: 80px 0;
-    color: black;
-    background-color: white;
-    width: 100%;
-}
-
 .contactLinks{
-    width: 400px;
-    margin: -60px auto;
+    margin: 0;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 90px;
+    padding: 0;
+    z-index: 99998;
 
     .contactLink{
+        position: relative;
+        right: -10px;
+        top:30px;
         color: black;
         text-align: left;
+        padding: 0;
+        margin: 2px 0;
+        transition-duration: 0.2s;
 
         .icon{
-            font-size: 60px;
-            position: relative;
-            opacity: 0.3;
-            top:20px;
-            rotate: 15deg;
+            font-size:30px;
+            margin: 0;
+            padding: 0;
         }
 
-        p{
-            position: relative;
-            left: 70px;
-            top:-10px;
-            font-size: 18px;
-            font-weight: 900;
-            color: rgb(97, 97, 97);
-            margin: 0;
+        // p{
+        //     position: relative;
+        //     left:40px;
+        //     top:-12px;
+        //     font-size: 15px;
+        //     font-weight: 900;
+        //     color: rgb(97, 97, 97);
+        //     margin: 0;
+        //     padding: 0;
+        // }
+    }
+
+    .contactLink:hover{
+        right: -2px;
+        // rotate: 10deg;
+        .icon{
+            color: rgb(73, 117, 128);
         }
     }
 }
