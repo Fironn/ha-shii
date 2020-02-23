@@ -176,7 +176,7 @@ const Chart = ({ data }) => {
                         nodeCanvasObject={canvasObject}
                         enableZoomPanInteraction={false}
                         width={468}
-                        height={400}
+                        height={500}
                         linkWidth={2}
                     />
                 </MediaQuery>
@@ -190,7 +190,7 @@ const Chart = ({ data }) => {
                         nodeCanvasObject={canvasObject}
                         enableZoomPanInteraction={false}
                         width={800}
-                        height={400}
+                        height={500}
                         linkWidth={2}
                     />
                 </MediaQuery>

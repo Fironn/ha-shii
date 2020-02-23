@@ -55,7 +55,7 @@ const Header = ({ page, siteTitle }) => {
   });
 
   return (
-    <header className="App-header">
+    <header className="App-header" title={page}>
       <nav className="App-navbar" title={page}>
         <p className="App-logo" title={page}><Link to="/" >{siteTitle}</Link></p>
         <p className="App-page" title={page}>{page}</p>

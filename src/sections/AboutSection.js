@@ -5,7 +5,6 @@ import styles from "../styles/section.module.scss"
 import profileJpg from '../images/profile.png';
 import iconAndroid from '../images/android.png';
 import iconPython from '../images/python.png';
-import iconApple from '../images/apple.png';
 import iconArduino from '../images/arduino.png';
 import iconC from '../images/c.png';
 import iconCss3 from '../images/css3.png';
@@ -15,10 +14,87 @@ import iconHtml5 from '../images/html5.png';
 import iconIbeacon from '../images/ibeacon.png';
 import iconJavascript from '../images/javascript.png';
 import iconNodejs from '../images/nodejs.png';
-import iconVscode from '../images/vscode.png';
 
 
 const AboutSection = () => {
+  const Skills = [
+    {
+      skill: 'JavaScript',
+      src: iconJavascript,
+      class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'iBeacon',
+      src: iconIbeacon,
+      class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Html5',
+      src: iconHtml5,
+      class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Gatsby',
+      src: iconGatsby,
+      class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Node.js',
+      src: iconNodejs,
+      class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Firebase',
+      src: iconFirebase,
+      // class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'JavaScript',
+      src: iconCss3,
+      // class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'C',
+      src: iconC,
+      // class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Arduino',
+      src: iconArduino,
+      // class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Python',
+      src: iconPython,
+      // class: styles.bigger,
+      level: 2,
+    },
+    {
+      skill: 'Android',
+      src: iconAndroid,
+      // class: styles.bigger,
+      level: 2,
+    },
+  ];
+
+  const SkillsLiTag = Skills.map((item) => {
+    return (
+      <li>
+        <img className={item.class} src={item.src} alt="" width="100" height="auto" />
+        <span>{item.level}</span>
+      </li>
+    );
+  });
+
   return (
     // <section id="about" className={styles.container}>
     <SectionContainer id="about">
@@ -34,20 +110,7 @@ const AboutSection = () => {
       </div>
       <div className={styles.skills}>
         <ul>
-          <img className={styles.bigger} src={iconJavascript} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconFirebase} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconPython} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconArduino} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconHtml5} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconCss3} alt="" width="100" height="auto" />
-          <br />
-          <img src={iconC} alt="" width="100" height="auto" />
-          <img src={iconGatsby} alt="" width="100" height="auto" />
-          <img src={iconIbeacon} alt="" width="100" height="auto" />
-          <img src={iconNodejs} alt="" width="100" height="auto" />
-          <img src={iconAndroid} alt="" width="100" height="auto" />
-          <img src={iconVscode} alt="" width="100" height="auto" />
-          <img src={iconApple} alt="" width="100" height="auto" />
+          {SkillsLiTag}
         </ul>
       </div>
     </SectionContainer>

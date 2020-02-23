@@ -1,4 +1,39 @@
+:root{
+    --main-main1: #c01921;
+    --main-main2: #cb8e34;
+    --main-main3: #005f8b;
+
+    --main-sub1: #92172d;
+    --main-sub2: #cfd84f;
+    --main-sub3: #35713e;
+
+    --main-tri1: #fbf9ed;
+    --main-tri2: #3e3a39;
+    --main-tri3: #5973b7;
+
+    --main-ac: #5caece;
+
+    --sub-main1: #825058;
+    --sub-main2: #e2c8bb;
+    --sub-main3: #d3976d;
+
+    --sub-sub1: #65272b;
+    --sub-sub2: #d1a47e;
+    --sub-sub3: #a37377;
+
+    --sub-tri1: #ae0d16;
+    --sub-tri2: #658d25;
+    --sub-tri3: #412b1c;
+
+    --sub-ac: #fff4d6;
+}
+
+// p.160
+// p.196
+
 html {
+    background-color: var(--sub-main2);
+    color: var(--sub-sub1);
 }
 
 * {
@@ -6,4 +41,24 @@ html {
     margin: 0;
     padding: 0;
     text-decoration: none;
+}
+
+nav{
+    background-color: var(--sub-sub1);
+    opacity: 0.8;
+    color: var(--sub-ac);
+
+    a:hover{
+        color: var(--sub-main2);
+    }
+}
+
+footer{
+    opacity: 0.8;
+    background-color: var(--sub-sub1);
+    color: var(--sub-ac);
+
+    a:hover{
+        color: var(--sub-main2);
+    }
 }
