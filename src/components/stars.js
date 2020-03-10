@@ -38,10 +38,10 @@ const Stars = ({ countOfStars }) => {
         <span>
             {stars.map((star, index) => {
                 if (star) {
-                    return <FontAwesomeIcon icon={['fas', 'fish']} style={styles.star} key={index} />
+                    return <FontAwesomeIcon icon={['fas', 'fish', 'fa-5x']} style={styles.star} key={index} />
                 }
 
-                return <FontAwesomeIcon icon={['fas', 'fish']} style={styles.starTrans} key={index} />
+                return <FontAwesomeIcon icon={['fas', 'fish', 'fa-5x']} style={styles.starTrans} key={index} />
             })}
         </span>
     );

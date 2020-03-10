@@ -34,7 +34,7 @@ const AboutSection = () => {
     <SectionContainer id="about">
       <SectionHeader text="about" />
       <div className={styles.location}>
-        <FontAwesomeIcon icon={['fas', 'map-marker-alt']} />
+        <FontAwesomeIcon icon={['fas', 'map-marker-alt', 'fa-5x']} />
         <p>Aizu, Fukushima</p>
       </div>
       <div className={styles.profile}>
