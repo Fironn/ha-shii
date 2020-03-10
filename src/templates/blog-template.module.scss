@@ -1,25 +1,35 @@
-.title{
-    font-size: 30px;
-    color: black;
-    padding: 0 40px;
-    min-height: 60px;
-    margin: 0;
-}
-
-.date{
-    padding: 0 40px;
-    font-size: 16px;
-    color: rgb(52, 52, 52);
-    border-bottom: solid rgba(0, 0, 0, 0.39) 1px;
-}
-
-.detail{
-    padding: 30px 60px;
-}
-
 .container{
-    height: 100%;
+    min-height: 100vh;
+    max-width: 90vw;
     padding : 80px 0;
+    margin: auto;
     text-align: left;
-    background-color: white;
+    background-color: var(--sub-ac);
+    color: var(--main-tri2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212);
+
+    .title{
+        font-size: 30px;
+        padding: 0 40px;
+        min-height: 60px;
+        color: var(--sub-sub1);
+        margin: 0;
+    }
+    
+    .date{
+        color: var(--sub-sub3);
+        padding: 0 40px;
+        font-size: 16px;
+        opacity: 0.8;
+    }
+    
+    .detail{
+        padding: 30px 60px;
+    }
+
+    hr{
+        background-color: var(--sub-sub3);
+        height: 1px;
+        margin: 10px 40px;
+    }
 }

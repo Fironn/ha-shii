@@ -8,24 +8,25 @@ import styles from "../styles/section.module.scss"
 
 const BlogsSection = () => {
   const data = useStaticQuery(graphql`
-  query MyQuery {
-    allMarkdownRemark (filter: {frontmatter: {path: {regex: "/blogs/"}}}){
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            thumbnail
-            path
-            main
+    query MyQuery {
+      allMarkdownRemark (filter: {frontmatter: {path: {regex: "/blogs/"}}}){
+        totalCount
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date
+              thumbnail
+              path
+              main
+            }
+            excerpt
           }
         }
       }
     }
-  }
-`)
+  `)
 
   return (
     <SectionContainer id="blogs">

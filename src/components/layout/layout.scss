@@ -2,6 +2,10 @@ body{
     text-align: center;
 }
 
+main{
+    z-index: 99995;
+}
+
 main[page="home"]{
     display: flex;
     flex-flow: row wrap;

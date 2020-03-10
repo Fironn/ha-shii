@@ -44,21 +44,127 @@ html {
 }
 
 nav{
-    background-color: var(--sub-sub1);
-    opacity: 0.8;
     color: var(--sub-ac);
-
+    
     a:hover{
         color: var(--sub-main2);
     }
+}
+
+header{
 }
 
 footer{
-    opacity: 0.8;
     background-color: var(--sub-sub1);
     color: var(--sub-ac);
+    filter: drop-shadow(0px -1px 5px rgba(0, 0, 0, 0.425));
 
     a:hover{
         color: var(--sub-main2);
     }
 }
+
+@media screen and (max-width:569px){
+    header{
+        nav{
+            background-color: var(--sub-sub1);
+            filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
+        }
+    }
+
+    footer[title='home']{
+        display: block;
+    }
+
+    main[page='home'] #contact{
+        width: 100vw;
+        position: absolute;
+        height: auto;
+
+        div[page='contact']{
+            top: -38px;
+            right: 5px;
+
+            div{
+                display: inline;
+                margin: 0 3px;
+                vertical-align: bottom;
+            }
+
+            div:hover{
+                top:43px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:570px){
+    header{
+        nav{
+            background-color: var(--sub-sub1);
+            filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
+        }
+    }
+
+    header[title='home']{
+        position: absolute;
+        min-height: 100vh; 
+        width: 35px;
+        margin: auto 0;
+
+        nav{
+            filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
+            background-color: var(--sub-sub1);
+            flex-flow: column wrap-reverse;
+            color: var(--sub-ac);
+            position: absolute;
+            right: 35px;
+            transform-origin: right top;
+            transform: rotate(-90deg );
+            width: 100vh;
+            height: 35px;
+            text-align: right;
+
+            a:hover{
+                color: var(--sub-main2);
+            }
+
+            .App-logo{
+                margin: auto 10px auto 0;
+                text-align: right;
+            }
+        }
+    }
+    
+    main[page='home']{
+        margin: 0 0 0 35px;
+        overflow: scroll;
+        height: 100vh !important;
+        
+        section{
+        }
+
+        .container{
+        }
+    }
+
+    footer{
+        display: block;
+    }
+
+    footer[title='home']{
+        display: none;
+    }
+
+    main[page='home'] #contact{
+        div[page='contact']{
+            div{
+            }
+
+            div:hover{
+                left: 5px;
+            }
+        }
+    }
+}
+

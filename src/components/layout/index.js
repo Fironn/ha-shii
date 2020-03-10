@@ -42,7 +42,7 @@ const Layout = ({ children, page }) => {
       >
         <main page={page}>{children}</main>
       </div>
-      <Footer />
+      <Footer siteTitle={data.site.siteMetadata.title} page={page} />
     </>
   )
 }

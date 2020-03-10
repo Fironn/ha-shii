@@ -28,16 +28,19 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    z-index: 99996;
+    z-index: 99999;
+    // display: none;
+}
 
-    .contactBackground{
-        background-color: var(--sub-sub2);
-        opacity: 0.6;
-        width: 8px;
-        position: absolute;
-        left: 0;
-        top:0;
-        height: 100%;
+.location{
+    color: var(--main-main2);
+    font-size: 14px;
+    opacity: 0.8;
+    position: relative;
+
+    p{
+        display: inline;
+        padding: 0 0 0 4px;
     }
 }
 
@@ -45,71 +48,84 @@
     width: 100%;
     position: relative;
     padding: auto;
-    margin: 40px 0 100px;
+    margin: 40px 0 25px;
     // display: flex;
     // flex-flow: row wrap;
 	justify-content: center;
 
     .profileDetails{
-        min-height: 200px;
-        padding: 20px 0;
-        margin: 0;
+        width: 90%;
+        max-width: 350px;
+        padding: 20px 15px;
+        margin: 20px auto 0;
         // float: grow 1 shrink 1;
-        vertical-align: middle;
-        color: var(--sub-main2);
-        font-weight: 500;
-        text-align: center;
-    }
+        color: var(--sub-ac);
+        background-color: rgba(255, 255, 255, 0.233);
+        border-radius: 6px;
 
+        .profileName{
+            color: var(--main-tri1);
+            font-weight: 900;
+            font-size: 16px;
+            text-align: center;
+            margin: 8px 0 7px;
+        }
+
+        hr{
+            background-color: var(--sub-ac);
+            max-width: 20px;
+            margin: 10px auto 25px;
+        }
+
+        .icon{
+            // float: grow 1 shrink 1;
+            width: 100px;
+            margin: 0;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 100px;
+            background-color: var(--sub-ac);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.37);
+        }
+
+        .profileMain{
+            text-indent: 1em;
+            font-weight: 500;
+            line-height: 1.7em;
+            font-size: 14px;
+            text-align: justify;
+            margin: 0;
+        }
+    }
     // @media screen and (max-width:690px){
     //     .profileDetails{
     //         padding: 40px;
     //         text-align: center;
     //     }
     // }
-    
-    .icon{
-        // float: grow 1 shrink 1;
-        width: 120px;
-        margin: 0;
-        height: 120px;
-        object-fit: cover;
-        border-radius: 100px;
-        background-color: var(--sub-ac);
-    }
 }
 
 .skills{
+    color: var(--sub-ac);
     width: 90%;
-    max-width: 400px;
-    background-color: var(--sub-main2);
     margin: 0 auto 20px;
-    padding: 35px;
-    border-radius: 10px;
+    padding: 10px 15px 10px;
+    text-align: center;
 
-    ul{
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        
-        li{
-            list-style: none;
-            display: inline-block;
-        }
+    hr{
+        background-color: var(--sub-ac);
+        max-width: 20px;
+        margin: 8px auto 10px;
+    }
 
-        img{
-            height: 20px;
-            width: auto;
-            object-fit: cover;
-            margin: 2px;
-        }
-    
-        .bigger{
-            margin: 0 1px;
-            height: 35px;
-            width: auto;
-            object-fit: cover;
-        }
+    .skill{
+        max-width: 250px;
+        padding: 10px 0 10px;
+        margin: 0 auto;
+    }
+
+    h4{
+        color: var(--sub-ac);
     }
 }
 
@@ -127,7 +143,7 @@
         vertical-align: middle;
         border: solid 1px var(--sub-sub1);
         background-color: var(--sub-ac);
-        float: grow 1 shrink 1;
+        flex: 1 1 300px;
         
         *{
             margin: 0;
@@ -214,57 +230,48 @@
     text-align: right;
     position: absolute;
     left: 0;
-    top: 90px;
+    bottom: 50px;
     padding: 0;
     z-index: 99998;
     
     .contactLink{
         position: relative;
-        left: -10px;
         top:30px;
-        text-align: right;
+        text-align: center;
+        left: -10px;
         padding: 0;
-        margin: 2px 0;
+        margin: 4px 0;
         transition-duration: 0.2s;
 
         .icon{
             transition-duration: 0.2s;
-            font-size:30px;
+            font-size:35px;
             margin: 0;
-            padding: 0;
+            border-radius: 3px;
             color: var(--sub-main2);
-            opacity: 0.8;
-            filter: drop-shadow(3px 3px 1px #82505893);
+            opacity: 0.9;
+            vertical-align:bottom;
+            // filter: drop-shadow(2px 4px 0px #ae0d15c5);
         }
 
         .icon[page="github"]{
             color: var(--main-tri2);
+            background-color: var(--sub-ac);
         }
 
         .icon[page="facebook"]{
             color: var(--main-tri3);
+            background-color: var(--sub-ac);
         }
 
         .icon[page="shihomihashi@gmail.com"]{
             color: var(--main-tri1);
+            background-color: var(--main-tri2);
+            font-size:32px;
         }
-
-        // p{
-        //     position: relative;
-        //     left:40px;
-        //     top:-12px;
-        //     font-size: 15px;
-        //     font-weight: 900;
-        //     color: rgb(97, 97, 97);
-        //     margin: 0;
-        //     padding: 0;
-        // }
     }
 
     .contactLink:hover{
-        left: -2px;
-
-        // rotate: 10deg;
         .icon[page="github"]{
             color: var(--main-tri2);
             opacity: 1;

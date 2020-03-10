@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 0;
+    line-height: 1.4em;
+}
+
+.stars{
+    flex: 0 0 60px;
+    text-align: right;
+    margin: 0 auto 0 0;
+}
+
+.name{
+    font-size: 12px;
+    overflow: visible;
+    text-align: left;
+    flex: 1 1 60px;
+    padding: 0 0 0 auto;
+}
+
+h4{
+    margin: 0;
+}

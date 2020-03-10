@@ -2,7 +2,7 @@ import React from "react"
 // import { Link } from "gatsby"
 import Layout from "../components/layout/"
 import SEO from "../components/seo"
-import SectionContainer from '../components/SectionContainer';
+// import SectionContainer from '../components/SectionContainer';
 
 // import TopSection from '../sections/TopSection';
 import AboutSection from '../sections/AboutSection';

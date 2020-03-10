@@ -1,12 +1,12 @@
 // import PropTypes from 'prop-types';
 import React from 'react';
-import SectionHeader from '../components/SectionHeader';
+// import SectionHeader from '../components/SectionHeader';
 import styles from "../styles/section.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import SectionContainer from '../components/SectionContainer';
+// import SectionContainer from '../components/SectionContainer';
 
 const FooterSection = () => {
   library.add(fab);
