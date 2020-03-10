@@ -1,0 +1,13 @@
+.App-footer{
+    height: 10vh;
+    width: 100%;
+    margin: 0;
+    padding: 5px 50px;
+    text-align: right;
+    position: relative;
+    z-index: 99998;
+}
+
+.App-footer-item{
+    width: 100%;
+}

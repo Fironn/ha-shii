@@ -1,61 +1,80 @@
-/* ナビゲーションバー自体の設定 */
 .App-navbar {
-    background-color:rgba(102, 51, 153, 0.603);
-    height: 50px;
     display: flex;
-    justify-content: flex-end;
-    flex-flow: row;
-    position: fixed;
-    top: 0;
-    width: 100%;
+    flex-flow: row wrap;
     z-index: 99999;
+    text-align: left;
 }
 
-.App-navbar > :first-child {
-    margin-right: auto;
+.App-navbar .App-navbar-item {
+    margin: auto;
+    flex: 1 1 500px;
+    text-align: center;
 }
 
-.App-navbar > .App-navbar-item {
-    align-items: center;
-    height: 50px;
-    margin: 0;
-    margin-right: 10px;
-}
-
-.App-navbar  .App-logo{
-    padding : 5px 20px;
-    display: block;
-}
-
-.App-navbar  .App-logo[title="home"]{
-    padding : 5px 20px;
+.App-navbar[title="home"] > .App-navbar-item {
     display: none;
 }
 
+.App-navbar > :first-child {
+}
+
+.App-navbar .App-logo{
+    padding : auto;
+    text-align: left;
+    margin: auto;
+    flex: 1 1 300px;
+}
+
+.App-navbar .App-page{
+    font-size: 16px;
+    vertical-align: middle;
+    flex: 2 2 200px;
+    padding: 0 20px 0 0;
+    margin: auto;
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.App-navbar .App-page[title="home"]{
+    display: none;
+}
+
+.App-navbar .App-page::before{
+    content: "-";
+    padding: 0 10px 0 0;
+}
+
+/* スクロール設定 */
+/* .App-navbar  .App-logo[title="home"]{
+    padding : 5px 20px
+    display: none;
+} */
+
 /* ナビゲーションバー左端のロゴのリンク */
 .App-navbar p a {
-    color: white;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    line-height: 2.0;
+    margin: auto 0 auto 30px;
 }
 
 .App-navbar-item ul {
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    margin-top: 9px;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: auto;
+    text-align: right;
+    justify-content: flex-end;
+    /* flex-flow:row nowrap; */
+    margin: 0;
+    width: 100%;
 }
 
 .App-navbar-item ul li {
-    list-style: none;
+    vertical-align: middle;
     width: 100px;
-    margin-right: 5px;
-
+    /* flex: 1 1 100px; */
+    list-style: none;
+    margin:5px 5px;
 }
 
 .App-navbar-item ul li :hover{
@@ -63,16 +82,12 @@
     color: white;
 }
 
-/* ナビゲーションバーのリンクのスタイル 
-   アクティブ時と差分がない物だけ以下に記述
-*/
 .App-navbar-item ul li a {
     font-size: 16px;
     text-decoration: none;
-    line-height: 2.0;
     text-align: center;
     display: block;
-    padding: 0 10px;
+    padding: 2px 5px;
     border-radius: 5px;
 }
 

@@ -1,19 +1,23 @@
 #graph{
-    background-color: rgba(214, 214, 214, 0.445);
-    height: 400px;
+    height: 540px;
     text-align: left;
+    background-color:#fff4d68c;
     margin: 0;
-    border-top: solid 1px white;
+    box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.356) inset;
+    // border-bottom: solid 1px var(--sub-tri3);
     overflow: hidden;
+    padding: 0;
+    color: var(--sub-ac);
 
     #graph-canvas{
+        z-index: 99997;
         position: relative;
-        height: 400px;
+        background-color: transparent;
+        height: 540px;
+        filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.664));
         left: 300px;
-        height: 400px;
 
         div{
-            height: 400px;
             overflow: hidden;
         }
 
@@ -23,14 +27,20 @@
     }
 
     #graph-tag{
+        box-shadow: 3px 0 10px -3px rgba(0, 0, 0, 0.425);
+        // filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
+        background-color: var(--sub-tri3);
         line-height: initial;
-        background-color: rgb(190, 134, 134);
-        height: 400px;
+        height: 540px;
         width: 300px;
         position: absolute;
         left: 0;
         z-index: 99998;
         text-align: center;
+
+        *{
+            color: var(--sub-ac);
+        }
     
         #img{
             background-color: white;
@@ -51,14 +61,14 @@
             height: 8%;
             font-size: 26px;
             font-weight: 800;
-            margin: 10px 0;
+            margin: 15px 0 0;
         }
     
         #subdetail{
             font-size: 14px;
             height: 8%;
             text-align: left;
-            margin: 10px;
+            margin: 3px 10px 10px;
             font-weight: 600;
             vertical-align: bottom; 
     
@@ -75,33 +85,44 @@
         }
     
         #detail{
+            width: 100%;
             font-size: 18px;
-            background-color: rgba(255, 255, 255, 0.719);
-            color: black;
-            height: 15%;
+            // background-color: rgba(255, 255, 255, 0.418);
+            height: 20%;
             text-align: left;
-            margin: 15px 0 8px;
-            border-top: solid 1px rgb(255, 255, 255);
-            border-bottom: solid 1px rgb(255, 255, 255);
+            margin: 5px 0;
             padding: 10px;
+            display:inline-block;
         }
         
         #link{
-            margin: auto;
-            font-size: 18px;
-            height:7%;
-            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.151);
+            margin: 0 auto;
+            vertical-align: middle;
+            font-size: 16px;
+            height:25px;
+            padding: auto;
             width: 40%;
-            font-weight: 900;
+            font-weight: 100;
             vertical-align: middle;
             border-radius: 5px;
-            color: white;
-            background-color: rgb(70, 70, 70);
+        }
+
+        #link:hover{
+            background-color: rgba(255, 255, 255, 0.055);
             opacity: 0.8;
+        }
+
+        hr {
+            max-width: 30px;
+            height: 1px;
+            background-color: var(--sub-ac);
+            margin: auto;
         }
     }
 
     #graph-tag[title="main"]{
+        margin: 0;
         #img{
             height: 70%;
         }
@@ -110,10 +131,13 @@
             height: 10%;
             font-size: 40px;
             font-weight: 900;
+            margin: 15px 0 0;
         }
 
         #detail{
             height: 20%;
+            margin: 0;
+            border: none;
         }
     }
 }

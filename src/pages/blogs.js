@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
-import Top from '../components/top'
+// import Top from '../components/top'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import styles from '../styles/pages.module.scss'
@@ -8,7 +8,7 @@ import styles from '../styles/pages.module.scss'
 const Blogs = ({ data }) => {
   return (
     <Layout page="blogs">
-      <Top title="Blogs" />
+      {/* <Top title="Blogs" /> */}
       <SEO title="Blogs" />
       <div className={styles.detail}>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>

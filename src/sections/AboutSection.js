@@ -1,53 +1,94 @@
 import React from "react"
+import Skill from '../components/Skills';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import styles from "../styles/section.module.scss"
 import profileJpg from '../images/profile.png';
-import iconAndroid from '../images/android.png';
-import iconPython from '../images/python.png';
-import iconApple from '../images/apple.png';
-import iconArduino from '../images/arduino.png';
-import iconC from '../images/c.png';
-import iconCss3 from '../images/css3.png';
-import iconFirebase from '../images/firebase.png';
-import iconGatsby from '../images/gatsby.png';
-import iconHtml5 from '../images/html5.png';
-import iconIbeacon from '../images/ibeacon.png';
-import iconJavascript from '../images/javascript.png';
-import iconNodejs from '../images/nodejs.png';
-import iconVscode from '../images/vscode.png';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 
 const AboutSection = () => {
+  library.add(fas);
+
+  const Skills = {
+    Frontend: {
+      'JavaScript': 2,
+      'HTML5/CSS3': 3,
+      'Gatsby': 2,
+      'Android': 1,
+    },
+    Backend: {
+      'Firebase': 3,
+      'Node.js': 2,
+      'Python': 2,
+    },
+    Others: {
+      'Arduino': 3,
+      'iBeacon': 2,
+    },
+  };
+
   return (
+    // <section id="about" className={styles.container}>
     <SectionContainer id="about">
       <SectionHeader text="about" />
+      <div className={styles.location}>
+        <FontAwesomeIcon icon={['fas', 'map-marker-alt']} size='1x' />
+        <p>Aizu, Fukushima</p>
+      </div>
       <div className={styles.profile}>
-        <img src={profileJpg} className={styles.icon} alt="" />
-        <p className={styles.profileDetails}>
-          {/* UoA26期。趣味は電子工作、特技はおりがみ。大学入学からプログラミングを始め、複数のプロコン/
-          ハッカソンに参加。WebアプリとIoTデバイス関連を中心に開発。テーマとして「IT×健康
-          ×音楽」を掛け合わせるのが好き。現在デザインについて勉強中 */}
-          いろいろなプロフィール
-        </p>
+        <div className={styles.profileDetails}>
+          <img src={profileJpg} className={styles.icon} height="120px" alt="" />
+          <p className={styles.profileName}>はっしー</p>
+          <hr />
+          <p className={styles.profileMain}>
+            某大学コンピュータ理工学部2年。趣味は電子工作、特技はおりがみ。
+            大学入学からプログラミングを始め、複数のプロコン/ハッカソンに参加。
+            主にWebアプリとIoTデバイス関連を開発。「IT×健康×音楽」をテーマに活動している
+          </p>
+        </div>
       </div>
       <div className={styles.skills}>
-        <ul>
-          <img className={styles.bigger} src={iconJavascript} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconFirebase} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconPython} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconArduino} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconHtml5} alt="" width="100" height="auto" />
-          <img className={styles.bigger} src={iconCss3} alt="" width="100" height="auto" />
-          <br />
-          <img src={iconC} alt="" width="100" height="auto" />
-          <img src={iconGatsby} alt="" width="100" height="auto" />
-          <img src={iconIbeacon} alt="" width="100" height="auto" />
-          <img src={iconNodejs} alt="" width="100" height="auto" />
-          <img src={iconAndroid} alt="" width="100" height="auto" />
-          <img src={iconVscode} alt="" width="100" height="auto" />
-          <img src={iconApple} alt="" width="100" height="auto" />
-        </ul>
+        <div className={styles.skill}>
+          <h4>Frontend</h4>
+          <hr />
+          <div>
+            {Object.keys(Skills.Frontend).map(skill => (
+              <Skill
+                skillName={skill}
+                skillLevel={Skills.Frontend[skill]}
+                key={skill}
+              />
+            ))}
+          </div>
+        </div>
+        <div className={styles.skill}>
+          <h4>Backend</h4>
+          <hr />
+          <div>
+            {Object.keys(Skills.Backend).map(skill => (
+              <Skill
+                skillName={skill}
+                skillLevel={Skills.Backend[skill]}
+                key={skill}
+              />
+            ))}
+          </div>
+        </div>
+        <div className={styles.skill}>
+          <h4>Others</h4>
+          <hr />
+          <div>
+            {Object.keys(Skills.Others).map(skill => (
+              <Skill
+                skillName={skill}
+                skillLevel={Skills.Others[skill]}
+                key={skill}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </SectionContainer>
   );

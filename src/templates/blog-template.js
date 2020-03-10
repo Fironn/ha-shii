@@ -15,11 +15,12 @@ const BlogTemplate = ({ data }) => {
     }
   } = data
   return (
-    <Layout page={`${title} Page`}>
-      <SEO title={`${title} Page`} />
+    <Layout page={`${title}`}>
+      <SEO title={`${title}`} />
       <div className={styles.container}>
-        <h1 className={styles.title}>{`${title} Page`}</h1>
+        <h1 className={styles.title}>{`${title}`}</h1>
         <div className={styles.date}>date : {date}</div>
+        <hr />
         <div className={styles.detail} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
@@ -35,6 +36,7 @@ export const pageQuery = graphql`
         date
         title
       }
+      html
     }
   }
 `

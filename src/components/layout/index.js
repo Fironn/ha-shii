@@ -22,7 +22,7 @@ const defaultProps = {
   page: null,
 };
 
-const Layout = ({ children,page }) => {
+const Layout = ({ children, page }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -35,14 +35,14 @@ const Layout = ({ children,page }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} page={page}/>
+      <Header siteTitle={data.site.siteMetadata.title} page={page} />
       <div
         style={{
         }}
       >
-        <main>{children}</main>
+        <main page={page}>{children}</main>
       </div>
-      <Footer />
+      <Footer siteTitle={data.site.siteMetadata.title} page={page} />
     </>
   )
 }

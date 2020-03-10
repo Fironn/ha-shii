@@ -1,14 +1,9 @@
 .container {
-    display: block;
-    flex: column;
-    align-items: center;
-    background-color: white;
+    // display: block;
+    // align-items: center;
 }
 
 .top {
-    padding: 80px 0;
-    height: 100vh;
-    color: black;
 
     div {
         font-size: 40px;
@@ -19,12 +14,33 @@
 
     a { 
         font-size: 30px;
-        border-bottom: solid black 2px;
+        border-bottom: solid var(--main-tri3) 2px;
     }
 
     a:hover{
-        color: red;
-        border-bottom: red solid 2px;
+    }
+}
+
+.bottom {
+    top:0;
+    left: 0;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    z-index: 99999;
+    // display: none;
+}
+
+.location{
+    color: var(--main-main2);
+    font-size: 14px;
+    opacity: 0.8;
+    position: relative;
+
+    p{
+        display: inline;
+        padding: 0 0 0 4px;
     }
 }
 
@@ -32,91 +48,102 @@
     width: 100%;
     position: relative;
     padding: auto;
-    margin: 60px 0;
-    display: flex;
-    flex-flow: row wrap;
+    margin: 40px 0 25px;
+    // display: flex;
+    // flex-flow: row wrap;
 	justify-content: center;
 
     .profileDetails{
-        color: black;
-        width: 500px;
-        height: 100%;
-        padding: 5px 40px;
-        margin: 0;
-        float: grow 1 shrink 1;
-        vertical-align: middle;
-    }
+        width: 90%;
+        max-width: 350px;
+        padding: 20px 15px;
+        margin: 20px auto 0;
+        // float: grow 1 shrink 1;
+        color: var(--sub-ac);
+        background-color: rgba(255, 255, 255, 0.233);
+        border-radius: 6px;
 
-    @media screen and (max-width:690px){
-        .profileDetails{
-            padding: 40px;
+        .profileName{
+            color: var(--main-tri1);
+            font-weight: 900;
+            font-size: 16px;
             text-align: center;
+            margin: 8px 0 7px;
+        }
+
+        hr{
+            background-color: var(--sub-ac);
+            max-width: 20px;
+            margin: 10px auto 25px;
+        }
+
+        .icon{
+            // float: grow 1 shrink 1;
+            width: 100px;
+            margin: 0;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 100px;
+            background-color: var(--sub-ac);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.37);
+        }
+
+        .profileMain{
+            text-indent: 1em;
+            font-weight: 500;
+            line-height: 1.7em;
+            font-size: 14px;
+            text-align: justify;
+            margin: 0;
         }
     }
-    
-    .icon{
-        float: grow 1 shrink 1;
-        width: 150px;
-        margin: 0;
-        height: 150px;
-        object-fit: cover;
-        background-color: rgb(184, 184, 184);
-        border-radius: 100px;
-    }
+    // @media screen and (max-width:690px){
+    //     .profileDetails{
+    //         padding: 40px;
+    //         text-align: center;
+    //     }
+    // }
 }
 
 .skills{
-    color: black;
-    width: 100%;
-    position: relative;
+    color: var(--sub-ac);
+    width: 90%;
+    margin: 0 auto 20px;
+    padding: 10px 15px 10px;
+    text-align: center;
 
-    img{
-        height: 50px;
-        width: auto;
-        object-fit: cover;
-        margin: 8px;
+    hr{
+        background-color: var(--sub-ac);
+        max-width: 20px;
+        margin: 8px auto 10px;
     }
 
-    .bigger{
-        margin: 0 5px;
-        height: 100px;
-        width: auto;
-        object-fit: cover;
+    .skill{
+        max-width: 250px;
+        padding: 10px 0 10px;
+        margin: 0 auto;
     }
-}
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    margin: auto;
-    grid-auto-rows: 400px;
-
-    div {
-        color: black;
-        padding: 30px;
-        border: 2px black solid;
-        border-radius: 15px;
-        background-color: rgba(255, 255, 255, 0.507);
-        height: 100%;
-        width: 100%;
+    h4{
+        color: var(--sub-ac);
     }
 }
 
 .lists{
     display: flex;
-    margin: 10px auto;
+    margin: 15px auto;
     flex-flow: row wrap;
-	justify-content: center;
+    justify-content: center;
+    color: var(--sub-sub1);
 
     .list{
         width: 300px;
-        height: 400px;
-        margin: 25px 8px;
+        height: 220px;
+        margin: 15px 8px;
         vertical-align: middle;
-        border: solid 1px rgba(255, 255, 255, 0.247);
-        background-color: rgb(223, 223, 223);
-        float: grow 1 shrink 1;
+        border: solid 1px var(--sub-sub1);
+        background-color: var(--sub-ac);
+        flex: 1 1 300px;
         
         *{
             margin: 0;
@@ -124,7 +151,7 @@
 
         .imgOut{
             height: 50%;
-            background-color: white;
+            background-color: var(--sub-tri3);
         }
         .img{
             height: 100%;
@@ -132,86 +159,130 @@
         }
 
         h3{
+            color: var(--sub-main1);
             margin: 10px;
-            padding: 10px 0;
+            padding: 0 0 10px;
             position: relative;
             text-align: center;
             top:10px;
-            border-bottom: solid 1px black;
+            border-bottom: solid 1px var(--sub-sub3);
         }
 
         .date{
-            color: black;
-            margin: 20px 10px 0;
+            color: var(--sub-sub3);
+            margin: 0 10px;
             font-size: 12px;
         }
 
         .small{
-            color: black;
-            margin: 5px 10px 10px;
+            margin: 0 10px;
             font-size: 16px;
         }
     }
 
     a:hover .list{
-        border: 1px solid rgb(179, 179, 179);
+        border: 1px solid var(--sub-tri1);
+        background-color: #ae0d1513;
+
+        h3{
+            color: #ae0d15c2;
+            border-bottom: solid 1px var(--sub-tri1);
+        }
+
+        .date{
+            color: var(--sub-sub3);
+        }
+        
+        .small{
+            color: var(--sub-sub1);
+        }
     }
 }
 
 .link {
-    background-color: rgba(140, 53, 177, 0.616);
-    font-size: 20px;
-    border: 1px solid rgb(194, 194, 194);
-    border-radius: 7px;
-    box-shadow: 0 1px 3px 0 rgb(0, 0, 0), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
-    color: rgba(255, 255, 255, 0.651);
-    display: block;
-    margin: 40px auto;
-    outline: none;
-    padding: 5px 0;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 800;
-    width: 300px;
+    text-align: left;
+    color: var(--sub-sub2);
+    position: relative;
+    font-size: 14px;
+    margin: 0 0 0 50px;    
+}
+
+.link::before {
+    color: var(--sub-sub2);
+    content: ">";
+    font-size: 10px;
+    padding: 1px 8px 0;
 }
 
 .link:hover{
-    background-color: rgba(0, 0, 0, 0.151);
-    color: rgb(255, 255, 255);
     cursor: pointer;
+    color: #ae0d15c2;
+
 }
 
-.bottom {
-    padding: 80px 0;
-    color: black;
-    background-color: white;
-    width: 100%;
+.link:hover::before{
+    color: #ae0d15c2;
+
 }
 
 .contactLinks{
-    width: 400px;
-    margin: -60px auto;
-
+    margin: 0;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    padding: 0;
+    z-index: 99998;
+    
     .contactLink{
-        color: black;
-        text-align: left;
+        position: relative;
+        top:30px;
+        text-align: center;
+        left: -10px;
+        padding: 0;
+        margin: 4px 0;
+        transition-duration: 0.2s;
 
         .icon{
-            font-size: 60px;
-            position: relative;
-            opacity: 0.3;
-            top:20px;
-            rotate: 15deg;
+            transition-duration: 0.2s;
+            font-size:35px;
+            margin: 0;
+            border-radius: 3px;
+            color: var(--sub-main2);
+            opacity: 0.9;
+            vertical-align:bottom;
+            // filter: drop-shadow(2px 4px 0px #ae0d15c5);
         }
 
-        p{
-            position: relative;
-            left: 70px;
-            top:-10px;
-            font-size: 18px;
-            font-weight: 900;
-            color: rgb(97, 97, 97);
-            margin: 0;
+        .icon[page="github"]{
+            color: var(--main-tri2);
+            background-color: var(--sub-ac);
+        }
+
+        .icon[page="facebook"]{
+            color: var(--main-tri3);
+            background-color: var(--sub-ac);
+        }
+
+        .icon[page="shihomihashi@gmail.com"]{
+            color: var(--main-tri1);
+            background-color: var(--main-tri2);
+            font-size:32px;
+        }
+    }
+
+    .contactLink:hover{
+        .icon[page="github"]{
+            color: var(--main-tri2);
+            opacity: 1;
+        }
+        .icon[page="facebook"]{
+            color: var(--main-tri3);
+            opacity: 1;
+        }
+        .icon[page="shihomihashi@gmail.com"]{
+            color: var(--main-tri1);
+            opacity: 1;
         }
     }
 }

@@ -10,13 +10,16 @@ const Chart = ({ data }) => {
 
     const titleList = ["projects", "health", "music", "iot"];
 
-    const getImg = src => {
-        const img = <img alt="" />;
-        img.src = `../../images/${src}`;
-        img.width = 13;
-        img.height = 13;
-        return img;
-    }
+    const color = ["#c01921", "#cb8e34", "#005f8b", "#35713e"]
+
+
+    // const getImg = src => {
+    //     const img = <img alt="" />;
+    //     img.src = `../../images/${src}`;
+    //     img.width = 13;
+    //     img.height = 13;
+    //     return img;
+    // }
 
     var dataList = {
         nodes: data.allMarkdownRemark.edges.map(({ node }) => {
@@ -43,7 +46,7 @@ const Chart = ({ data }) => {
         }),
     }
     dataList.nodes.push(
-        { id: "projects", title: "", category: "center", val: 4, thumbnail: `android.png`, },
+        { id: "projects", title: "", category: "projects", val: 4, thumbnail: `android.png`, },
         { id: "health", title: "Health", category: "health", val: 10, thumbnail: `android.png`, },
         { id: "iot", title: "IoT", category: "iot", val: 10, thumbnail: `android.png`, },
         { id: "music", title: "Music", category: "music", val: 10, thumbnail: `android.png`, },
@@ -62,10 +65,11 @@ const Chart = ({ data }) => {
         // const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.val, 0, 2 * Math.PI, false);
-        ctx.fillStyle = node.color;
+        if (titleList.indexOf(node.category) === -1) ctx.fillStyle = "white";
+        else ctx.fillStyle = color[titleList.indexOf(node.category)];
         ctx.fill();
         // ctx.drawImage(node.thumbnail, node.x, node.y);
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = "black";
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         if (titleList.indexOf(node.id) === -1) ctx.font = "14px";
@@ -82,13 +86,14 @@ const Chart = ({ data }) => {
                 <span id="category">Category</span>
                 <span id="event">Event</span>
             </div>
+            <hr />
             <div id="detail">Detail</div>
             <Link to="/projects/">
                 <div id="link">
                     more
                 </div>
             </Link>
-        </div>
+        </div >
         ;
 
     const onNodeClick = function (nodeId) {
@@ -103,6 +108,7 @@ const Chart = ({ data }) => {
                         <span id="category">{nodeId.category}</span>
                         <span id="event">{nodeId.event}</span>
                     </div>
+                    <hr />
                     <div id="detail">{nodeId.overview}</div>
                     <Link to={"/" + nodeId.id}>
                         <div id="link">
@@ -137,6 +143,7 @@ const Chart = ({ data }) => {
                                 <span id="category">{nodeId.category}</span>
                                 <span id="event">{nodeId.event}</span>
                             </div>
+                            <hr />
                             <div id="detail">{nodeId.overview}</div>
                             <Link to={"/" + nodeId.id}>
                                 <div id="link">
@@ -166,17 +173,16 @@ const Chart = ({ data }) => {
             <div id="graph-tag">
             </div>
             <div id="graph-canvas">
-                <MediaQuery query="(max-width: 768px)">
+                <MediaQuery query="(max-width: 767px)">
                     <ForceGraph2D
                         id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
                         graphData={dataList}
-                        nodeAutoColorBy="category"
                         onNodeHover={onNodeHover}
                         onNodeClick={onNodeClick}
                         nodeCanvasObject={canvasObject}
                         enableZoomPanInteraction={false}
                         width={468}
-                        height={400}
+                        height={500}
                         linkWidth={2}
                     />
                 </MediaQuery>
@@ -184,13 +190,12 @@ const Chart = ({ data }) => {
                     <ForceGraph2D
                         id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
                         graphData={dataList}
-                        nodeAutoColorBy="category"
                         onNodeHover={onNodeHover}
                         onNodeClick={onNodeClick}
                         nodeCanvasObject={canvasObject}
                         enableZoomPanInteraction={false}
                         width={800}
-                        height={400}
+                        height={500}
                         linkWidth={2}
                     />
                 </MediaQuery>

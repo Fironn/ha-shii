@@ -8,28 +8,32 @@ import styles from "../styles/section.module.scss"
 
 const BlogsSection = () => {
   const data = useStaticQuery(graphql`
-  query MyQuery {
-    allMarkdownRemark (filter: {frontmatter: {path: {regex: "/blogs/"}}}){
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            thumbnail
-            path
-            main
+    query MyQuery {
+      allMarkdownRemark (filter: {frontmatter: {path: {regex: "/blogs/"}}}){
+        totalCount
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date
+              thumbnail
+              path
+              main
+            }
+            excerpt
           }
         }
       }
     }
-  }
-`)
+  `)
 
   return (
     <SectionContainer id="blogs">
       <SectionHeader text="blogs" />
+      <Link to="/blogs/" className={styles.link}>
+        see more
+      </Link>
       <div className={styles.lists}>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.main === 1) return (
@@ -49,9 +53,6 @@ const BlogsSection = () => {
           );
         })}
       </div>
-      <Link to="/blogs/" className={styles.link}>
-        more
-      </Link>
     </SectionContainer>
   );
 };
