@@ -46,10 +46,10 @@ const Chart = ({ data }) => {
         }),
     }
     dataList.nodes.push(
-        { id: "projects", title: "", category: "projects", val: 4, thumbnail: `android.png`, },
-        { id: "health", title: "Health", category: "health", val: 10, thumbnail: `android.png`, },
-        { id: "iot", title: "IoT", category: "iot", val: 10, thumbnail: `android.png`, },
-        { id: "music", title: "Music", category: "music", val: 10, thumbnail: `android.png`, },
+        { id: "projects", title: "", category: "projects", val: 4, thumbnail: ``, },
+        { id: "health", title: "Health", category: "health", val: 10, thumbnail: ``, },
+        { id: "iot", title: "IoT", category: "iot", val: 10, thumbnail: ``, },
+        { id: "music", title: "Music", category: "music", val: 10, thumbnail: ``, },
     );
     dataList.links.push(
         { source: "projects", target: "health" },
@@ -79,7 +79,7 @@ const Chart = ({ data }) => {
 
     var nodeDetail =
         <div id="graph-tag">
-            <div id="img"><Images filename="android.png" className="imgObj" /></div>
+            <div id="img"><Images filename="" className="imgObj" /></div>
             <div id="title">Title</div>
             <div id="subdetail">
                 <span id="date">Date</span>
