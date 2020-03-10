@@ -92,7 +92,7 @@
             text-indent: 1em;
             font-weight: 500;
             line-height: 1.7em;
-            font-size: 14px;
+            font-size: 12px;
             text-align: justify;
             margin: 0;
         }
@@ -160,6 +160,7 @@
 
         h3{
             color: var(--sub-main1);
+            font-weight: 500;
             margin: 10px;
             padding: 0 0 10px;
             position: relative;
@@ -171,10 +172,12 @@
         .date{
             color: var(--sub-sub3);
             margin: 0 10px;
+            font-weight: 400;
             font-size: 12px;
         }
 
         .small{
+            font-weight: 500;
             margin: 0 10px;
             font-size: 16px;
         }

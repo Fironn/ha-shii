@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `はっしー's スタジオ`,
     description: `Ha-shii no portfolio.`,
-    author: `@firon_`,
+    author: `@ha_shii_`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile.png`, // This path is relative to the root of the site.
       },
     },
     {
