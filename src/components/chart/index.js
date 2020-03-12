@@ -186,7 +186,7 @@ const Chart = ({ data }) => {
                         linkWidth={2}
                     />
                 </MediaQuery>
-                <MediaQuery query="(min-width: 768px)">
+                <MediaQuery query="(min-width: 570px)">
                     <ForceGraph2D
                         id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
                         graphData={dataList}

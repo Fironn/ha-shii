@@ -85,6 +85,30 @@
     }
 }
 
+@media screen and (max-width:569px){
+    div #graph{
+        display: none;
+    }
+
+    .detail{
+        padding: 30px 10px;
+    }
+
+    .lists{
+        margin: 15px auto;
+
+        div{
+            text-align: center;
+            width: 100%;
+
+            .list{
+                margin: 25px auto;
+            }
+        }
+    }    
+}
+
+
 // for blog.js
 // .twitter{
 //     float: grow 1 shrink 1;

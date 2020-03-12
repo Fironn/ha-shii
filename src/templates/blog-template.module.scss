@@ -1,7 +1,7 @@
 .container{
     min-height: 100vh;
-    max-width: 90vw;
-    padding : 80px 0;
+    max-width: 1200px;
+    padding : 80px 40px;
     margin: auto;
     text-align: left;
     background-color: var(--sub-ac);
@@ -10,7 +10,7 @@
 
     .title{
         font-size: 30px;
-        padding: 0 40px;
+        padding: 0;
         min-height: 60px;
         color: var(--sub-sub1);
         margin: 0;
@@ -18,18 +18,24 @@
     
     .date{
         color: var(--sub-sub3);
-        padding: 0 40px;
+        padding: 0;
         font-size: 16px;
         opacity: 0.8;
     }
     
     .detail{
-        padding: 30px 60px;
+        padding: 30px 0;
     }
 
     hr{
         background-color: var(--sub-sub3);
         height: 1px;
-        margin: 10px 40px;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width:569px){
+    .container{
+        padding : 40px 15px;
     }
 }
