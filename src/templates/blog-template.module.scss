@@ -37,5 +37,10 @@
 @media screen and (max-width:569px){
     .container{
         padding : 40px 15px;
+
+        .title{
+            font-size: 25px;
+            min-height: 35px;
+        }
     }
 }

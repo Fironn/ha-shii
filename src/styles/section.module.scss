@@ -137,6 +137,7 @@
     color: var(--sub-sub1);
 
     .list{
+        overflow: hidden;
         width: 300px;
         height: 220px;
         margin: 15px 8px;
@@ -144,6 +145,7 @@
         border: solid 1px var(--sub-sub1);
         background-color: var(--sub-ac);
         flex: 1 1 300px;
+        padding: 0;
         
         *{
             margin: 0;
@@ -160,26 +162,33 @@
 
         h3{
             color: var(--sub-main1);
-            font-weight: 500;
-            margin: 10px;
-            padding: 0 0 10px;
+            font-weight: 600;
+            margin: 10px 0;
+            padding: 0 10px 10px;
             position: relative;
             text-align: center;
             top:10px;
-            border-bottom: solid 1px var(--sub-sub3);
         }
 
+        hr{
+            margin: 0 10px;
+            background-color: var(--sub-sub3);
+            height: 1px;
+        }
+        
         .date{
             color: var(--sub-sub3);
-            margin: 0 10px;
+            padding: 0 10px;
             font-weight: 400;
             font-size: 12px;
         }
 
         .small{
             font-weight: 500;
-            margin: 0 10px;
+            padding: 0 10px;
             font-size: 16px;
+            height: 50%;
+            overflow: hidden;
         }
     }
 
@@ -189,7 +198,10 @@
 
         h3{
             color: #ae0d15c2;
-            border-bottom: solid 1px var(--sub-tri1);
+        }
+
+        hr{
+            background-color: var(--sub-tri1);
         }
 
         .date{
@@ -286,6 +298,62 @@
         .icon[page="shihomihashi@gmail.com"]{
             color: var(--main-tri1);
             opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width:569px){
+    h2{
+        margin:0 !important;
+        text-align: center;
+    }
+    .link{
+        text-align: right;
+        display: block;
+        width: 300px;
+        padding: 0;
+        margin: auto;
+    }
+
+    .lists{
+        .list{
+            margin: 6px 0;
+            height: 120px;
+
+            h3{
+                margin: 5px 0;
+                font-size: 18px;
+                text-align: left;
+            }
+
+            .date{
+                font-size: 10px;
+            }
+
+            .small{
+                font-size: 14px;
+            }
+        }
+    }
+
+    .lists[page="projects"]{
+        .list{
+            .listDetail{
+                margin: 0;
+                float: left;
+            
+                *{
+                    width: 158px;
+                }
+            }
+
+            .imgOut{
+                float: right;
+                width: 120px;
+                height: 120px;
+                left: 50%;
+                z-index: 99994;
+            }
         }
     }
 }

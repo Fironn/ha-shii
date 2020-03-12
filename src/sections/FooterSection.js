@@ -46,8 +46,8 @@ const FooterSection = () => {
         {info.map(info => (
           <div className={styles.contactLink} >
             <a href={info.link}
-              key={info.description}>
-              <FontAwesomeIcon icon={info.icon} page={info.description} className={styles.icon} />
+              key={info.description} style={{ fontSize: '22px' }}>
+              <FontAwesomeIcon size="2x" icon={info.icon} page={info.description} className={styles.icon} />
               {/* <p>{info.description}</p> */}
             </a>
           </div>
@@ -55,7 +55,7 @@ const FooterSection = () => {
       </div>
       <div className={styles.contactBackground}></div>
       {/* </SectionContainer> */}
-    </section>
+    </section >
   );
 };
 

@@ -15,7 +15,7 @@ const Projects = ({ data }) => {
       <Chart className={styles.chart} data={data} />
       <div className={styles.detail} title="projects">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        <div className={styles.lists}>
+        <div className={styles.lists} page="projects">
           {data.allMarkdownRemark.edges.map(({ node }) => {
             return (
               <div key={node.id}>
@@ -24,11 +24,14 @@ const Projects = ({ data }) => {
                     <div className={styles.imgOut}>
                       <Image className={styles.img} filename={node.frontmatter.thumbnail} />
                     </div>
-                    <h3>
-                      {node.frontmatter.title}
-                    </h3>
-                    <p className={styles.date}>{node.frontmatter.date}</p>
-                    <p className={styles.small}>{node.frontmatter.overview}</p>
+                    <div className={styles.listDetail}>
+                      <h3>
+                        {node.frontmatter.title}
+                      </h3>
+                      <hr />
+                      <p className={styles.date}>{node.frontmatter.date}</p>
+                      <p className={styles.small}>{node.frontmatter.overview}</p>
+                    </div>
                   </div>
                 </Link>
               </div>
