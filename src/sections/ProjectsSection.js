@@ -30,9 +30,11 @@ const ProjectsSection = () => {
 
   return (
     <SectionContainer id="projects">
-      <SectionHeader text="projects" />
-      <Link to="/projects/" className={styles.link}>
-        see more
+      <Link to="/projects/">
+        <SectionHeader text="projects" />
+        <div className={styles.link}>
+          see more
+        </div>
       </Link>
       <div className={styles.lists} page="projects">
         {data.allMarkdownRemark.edges.map(({ node }) => {

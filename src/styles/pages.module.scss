@@ -197,37 +197,38 @@
     .links{
         float: grow 1 shrink 1;
         width: 450px;
-        margin: 0 auto 40px 0;
+        margin: 40px auto 40px 0;
 
         .link{
             width: 100%;
             transition-duration: 0.5s;
-            margin: -20px 0;
+            margin: -50px 0;
 
             .icon{
                 font-size: 40px;
                 position: relative;
-                opacity: 0.5;
+                opacity: 0.8;
+                border-radius: 3px;
                 top:20px;
                 transition-duration: 0.1s;
             }
 
             .icon[page="github"]{
-                color: var(--main-tri2);
+                background-color: var(--main-tri1);
             }
     
             .icon[page="facebook"]{
-                color: var(--main-tri3);
+                background-color: var(--main-tri3);
             }
     
             .icon[page="shihomihashi@gmail.com"]{
-                color: var(--main-tri2);
+                background-color: var(--main-tri2);
             }
 
             p{
                 position: relative;
-                left: 50px;
-                top:-18px;
+                left: 55px;
+                top:-50px;
                 font-size: 18px;
                 color: var(--main-tri2);
                 font-weight: 400;

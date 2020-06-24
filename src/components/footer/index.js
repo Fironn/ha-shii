@@ -14,7 +14,8 @@ const Footer = ({ page, siteTitle }) => (
     <footer className="App-footer" title={page}>
         <div className="App-footer-item">
             © {new Date().getFullYear()}, Built with
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <a href="https://www.gatsbyjs.org">Gatsby</a><br />
+            <a target="_blank" rel="noopener noreferrer" href="https://icons8.jp">アイコン8</a>
         </div>
     </footer>
 )

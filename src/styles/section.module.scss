@@ -4,7 +4,6 @@
 }
 
 .top {
-
     div {
         font-size: 40px;
         font-weight: 600;
@@ -36,11 +35,22 @@
     color: var(--main-main2);
     font-size: 14px;
     opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
     position: relative;
+    padding-top: 4px;
+
+    .icon{
+        float: left;
+        padding: 0 0 0 4px;
+        margin: auto 0;
+    }
 
     p{
-        display: inline;
+        float: left;
         padding: 0 0 0 4px;
+        margin: auto 0;
     }
 }
 
@@ -232,12 +242,10 @@
 .link:hover{
     cursor: pointer;
     color: #ae0d15c2;
-
 }
 
 .link:hover::before{
     color: #ae0d15c2;
-
 }
 
 .contactLinks{
@@ -260,43 +268,33 @@
 
         .icon{
             transition-duration: 0.2s;
-            font-size:35px;
             margin: 0;
             border-radius: 3px;
-            color: var(--sub-main2);
-            opacity: 0.9;
             vertical-align:bottom;
             // filter: drop-shadow(2px 4px 0px #ae0d15c5);
         }
 
         .icon[page="github"]{
-            color: var(--main-tri2);
-            background-color: var(--sub-ac);
+            background-color: var(--main-tri1);
         }
 
         .icon[page="facebook"]{
-            color: var(--main-tri3);
-            background-color: var(--sub-ac);
+            background-color: var(--main-tri3);
         }
 
         .icon[page="shihomihashi@gmail.com"]{
-            color: var(--main-tri1);
             background-color: var(--main-tri2);
-            font-size:32px;
         }
     }
 
     .contactLink:hover{
         .icon[page="github"]{
-            color: var(--main-tri2);
             opacity: 1;
         }
         .icon[page="facebook"]{
-            color: var(--main-tri3);
             opacity: 1;
         }
         .icon[page="shihomihashi@gmail.com"]{
-            color: var(--main-tri1);
             opacity: 1;
         }
     }

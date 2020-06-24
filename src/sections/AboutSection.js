@@ -4,12 +4,9 @@ import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import styles from "../styles/section.module.scss"
 import profileJpg from '../images/profile.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import locationJpg from '../images/location.png';
 
 const AboutSection = () => {
-  library.add(fas);
 
   const Skills = {
     Frontend: {
@@ -28,15 +25,13 @@ const AboutSection = () => {
       'iBeacon': 2,
     },
   };
-  const element = <FontAwesomeIcon icon={['fas', 'map-marker-alt']} size='1x' />
-
 
   return (
     // <section id="about" className={styles.container}>
     <SectionContainer id="about">
       <SectionHeader text="about" />
-      <div className={styles.location} style={{ fontSize: '14px' }}>
-        {element}
+      <div className={styles.location}>
+        <img src={locationJpg} className={styles.icon} height="18px" width="20px" alt="" />
         <p>Aizu, Fukushima</p>
       </div >
       <div className={styles.profile}>

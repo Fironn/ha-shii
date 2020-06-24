@@ -33,8 +33,9 @@
     margin: auto;
     text-align: right;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
     opacity: 0.7;
+    overflow: hidden;
 }
 
 .App-navbar .App-page[title="home"]{

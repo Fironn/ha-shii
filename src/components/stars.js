@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import birdPng from '../images/bird.png';
 
 const propTypes = {
     countOfStars: PropTypes.number.isRequired,
 };
 
 const Stars = ({ countOfStars }) => {
-    library.add(fas);
 
     const styles = {
         star: {
@@ -38,10 +35,10 @@ const Stars = ({ countOfStars }) => {
         <span>
             {stars.map((star, index) => {
                 if (star) {
-                    return <FontAwesomeIcon icon={['fas', 'fish']} size="1x" style={styles.star} key={index} />
+                    return <img src={birdPng} style={styles.star} height="17px" alt="" key={index} />
                 }
 
-                return <FontAwesomeIcon icon={['fas', 'fish']} size="1x" style={styles.starTrans} key={index} />
+                return <img src={birdPng} style={styles.starTrans} height="17px" alt="" key={index} />
             })}
         </span>
     );
