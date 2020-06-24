@@ -7,7 +7,7 @@
 
 .App-navbar .App-navbar-item {
     margin: auto;
-    flex: 1 1 500px;
+    flex: 2 none 300px;
     text-align: center;
 }
 
@@ -22,19 +22,20 @@
     padding : auto;
     text-align: left;
     margin: auto;
-    flex: 1 1 300px;
+    flex: 1 none 210px;
 }
 
 .App-navbar .App-page{
     font-size: 16px;
     vertical-align: middle;
-    flex: 2 2 200px;
+    flex: 2 none 120px;
     padding: 0 20px 0 0;
     margin: auto;
     text-align: right;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
     opacity: 0.7;
+    overflow: hidden;
 }
 
 .App-navbar .App-page[title="home"]{

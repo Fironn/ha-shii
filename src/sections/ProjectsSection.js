@@ -30,11 +30,13 @@ const ProjectsSection = () => {
 
   return (
     <SectionContainer id="projects">
-      <SectionHeader text="projects" />
-      <Link to="/projects/" className={styles.link}>
-        see more
+      <Link to="/projects/">
+        <SectionHeader text="projects" />
+        <div className={styles.link}>
+          see more
+        </div>
       </Link>
-      <div className={styles.lists}>
+      <div className={styles.lists} page="projects">
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.main === 1) return (
             <div key={node.id}>
@@ -44,11 +46,14 @@ const ProjectsSection = () => {
                     <div className={styles.imgOut}>
                       <Image className={styles.img} filename={node.frontmatter.thumbnail} />
                     </div>
-                    <h3>
-                      {node.frontmatter.title}
-                    </h3>
-                    <p className={styles.date}>{node.frontmatter.date}</p>
-                    <p className={styles.small}>{node.frontmatter.overview}</p>
+                    <div className={styles.listDetail}>
+                      <h3>
+                        {node.frontmatter.title}
+                      </h3>
+                      <hr />
+                      <p className={styles.date}>{node.frontmatter.date}</p>
+                      <p className={styles.small}>{node.frontmatter.overview}</p>
+                    </div>
                   </div>
                 </WhiteBox>
               </Link>

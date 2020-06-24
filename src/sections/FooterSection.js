@@ -2,32 +2,29 @@
 import React from 'react';
 // import SectionHeader from '../components/SectionHeader';
 import styles from "../styles/section.module.scss"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
 // import SectionContainer from '../components/SectionContainer';
+import githubJpg from '../images/github.png';
+import facebookJpg from '../images/facebook.png';
+import emailJpg from '../images/email.png';
 
 const FooterSection = () => {
-  library.add(fab);
-  library.add(fas);
 
   const info = [
     {
       title: 'github',
-      icon: ['fab', 'github-square'],
+      icon: githubJpg,
       description: 'github',
       link: 'https://github.com/Fironn',
     },
     {
       title: 'facebook',
-      icon: ['fab', 'facebook-square'],
+      icon: facebookJpg,
       description: 'facebook',
       link: 'https://www.facebook.com/shihomi.hashimoto.35',
     },
     {
       title: 'mail',
-      icon: ['fas', 'envelope'],
+      icon: emailJpg,
       description: 'shihomihashi@gmail.com',
       link: 'mailto:shihomihashi@gmail.com',
     },
@@ -45,9 +42,8 @@ const FooterSection = () => {
       <div className={styles.contactLinks} page="contact">
         {info.map(info => (
           <div className={styles.contactLink} >
-            <a href={info.link}
-              key={info.description}>
-              <FontAwesomeIcon icon={info.icon} page={info.description} className={styles.icon} />
+            <a href={info.link} key={info.description}>
+              <img src={info.icon} className={styles.icon} page={info.description} height="40px" alt="" />
               {/* <p>{info.description}</p> */}
             </a>
           </div>
@@ -55,7 +51,7 @@ const FooterSection = () => {
       </div>
       <div className={styles.contactBackground}></div>
       {/* </SectionContainer> */}
-    </section>
+    </section >
   );
 };
 

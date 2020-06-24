@@ -4,12 +4,9 @@ import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import styles from "../styles/section.module.scss"
 import profileJpg from '../images/profile.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import locationJpg from '../images/location.png';
 
 const AboutSection = () => {
-  library.add(fas);
 
   const Skills = {
     Frontend: {
@@ -34,9 +31,9 @@ const AboutSection = () => {
     <SectionContainer id="about">
       <SectionHeader text="about" />
       <div className={styles.location}>
-        <FontAwesomeIcon icon={['fas', 'map-marker-alt']} size='1x' />
+        <img src={locationJpg} className={styles.icon} height="18px" width="20px" alt="" />
         <p>Aizu, Fukushima</p>
-      </div>
+      </div >
       <div className={styles.profile}>
         <div className={styles.profileDetails}>
           <img src={profileJpg} className={styles.icon} height="120px" alt="" />
@@ -90,7 +87,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </SectionContainer>
+    </SectionContainer >
   );
 };
 

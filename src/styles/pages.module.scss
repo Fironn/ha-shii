@@ -21,11 +21,13 @@
     background-color: var(--sub-ac);
 
     .list{
+        overflow: hidden;
         width: 300px;
         height: 350px;
         margin: 25px 12px 25px 0px;
         vertical-align: middle;
         border: solid 1px var(--sub-sub1);
+        padding: 0;
         flex: 1 1;
 
         *{
@@ -43,26 +45,32 @@
 
         h3{
             color: var(--sub-main1);
-            margin: 10px;
-            font-weight: 500;
-            padding: 0 0 10px;
+            font-weight: 600;
+            margin: 10px 0;
+            padding: 0 10px 10px;
             position: relative;
             text-align: center;
             top:10px;
-            border-bottom: solid 1px var(--sub-sub3);
+        }
+
+        hr{
+            margin: 0 10px;
+            background-color: var(--sub-sub3);
+            height: 1px;
         }
 
         .date{
             font-weight: 400;
             color: var(--sub-sub3);
-            margin: 0 10px;
+            padding: 0 10px;
             font-size: 12px;
         }
 
         .small{
-            color: black;
             font-weight: 500;
-            margin: 5px 10px;
+            padding: 0 10px;
+            height: 50%;
+            overflow: hidden;
             font-size: 16px;
         }
     }
@@ -72,9 +80,12 @@
 
         h3{
             color: #ae0d15c2;
-            border-bottom: solid 1px var(--sub-tri1);
         }
 
+        hr{
+            background-color: var(--sub-tri1);
+        }
+        
         .date{
             color: var(--sub-sub3);
         }
@@ -84,6 +95,72 @@
         }
     }
 }
+
+@media screen and (max-width:569px){
+    div #graph{
+        display: none;
+    }
+
+    .detail{
+        padding: 30px 10px;
+    }
+
+    .lists{
+        margin: 15px auto;
+
+        div{
+            text-align: center;
+            width: 100%;
+
+            .list{
+                height: 160px;
+                margin: 6px auto;
+            }
+
+            h3{
+                margin: 5px 0;
+                font-size: 18px;
+                text-align: left;
+            }
+
+            .date{
+                font-size: 10px;
+            }
+
+            .small{
+                font-size: 14px;
+            }
+        }
+    }    
+
+
+    .lists[page="projects"]{
+        .list{
+            .listDetail{
+                margin: 0;
+                float: left;
+                width: 158px;
+            
+                *{
+                    width: 158px;
+                }
+            }
+
+            .imgOut{
+                float: right;
+                width: 120px;
+                height: 160px;
+                left: 50%;
+                z-index: 99994;
+            }
+        }
+    }
+
+    .twitter{
+        display: none;
+    }
+}
+
 
 // for blog.js
 // .twitter{
@@ -120,37 +197,38 @@
     .links{
         float: grow 1 shrink 1;
         width: 450px;
-        margin: 0 auto 40px 0;
+        margin: 40px auto 40px 0;
 
         .link{
             width: 100%;
             transition-duration: 0.5s;
-            margin: -20px 0;
+            margin: -50px 0;
 
             .icon{
                 font-size: 40px;
                 position: relative;
-                opacity: 0.5;
+                opacity: 0.8;
+                border-radius: 3px;
                 top:20px;
                 transition-duration: 0.1s;
             }
 
             .icon[page="github"]{
-                color: var(--main-tri2);
+                background-color: var(--main-tri1);
             }
     
             .icon[page="facebook"]{
-                color: var(--main-tri3);
+                background-color: var(--main-tri3);
             }
     
             .icon[page="shihomihashi@gmail.com"]{
-                color: var(--main-tri2);
+                background-color: var(--main-tri2);
             }
 
             p{
                 position: relative;
-                left: 50px;
-                top:-18px;
+                left: 55px;
+                top:-50px;
                 font-size: 18px;
                 color: var(--main-tri2);
                 font-weight: 400;

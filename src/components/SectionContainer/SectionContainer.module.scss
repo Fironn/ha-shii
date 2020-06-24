@@ -1,7 +1,6 @@
 .container {
     // display: block;
     align-items: center;
-    min-height: 100vh;
     padding:90px 20px 40px;
     background-color: var(--sub-ac);
     text-align: left;
@@ -35,11 +34,11 @@
 // }
 
 section{
-    flex: 4 4 425px !important;
+    flex: 4 none 400px !important;
 }
 
 section[id="about"]{
-    flex: 3 3 130px !important;
+    flex: 2 none 200px !important;
     min-width: 130px !important;
 }
 
@@ -51,4 +50,10 @@ section[id="contact"]{
     flex: none none none !important;
     min-width: 15px !important;
     padding:0 !important;
+}
+
+@media screen and (max-width:569px){
+    .container{
+        padding:60px 7px 0;
+    }
 }

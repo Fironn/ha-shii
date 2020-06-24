@@ -45,6 +45,7 @@ html {
 
 nav{
     color: var(--sub-ac);
+    // height: 41px;
     
     a:hover{
         color: var(--sub-main2);
@@ -57,19 +58,28 @@ header{
 footer{
     background-color: var(--sub-sub1);
     color: var(--sub-ac);
-    filter: drop-shadow(0px -1px 5px rgba(0, 0, 0, 0.425));
+    // filter: drop-shadow(0px -1px 5px rgba(0, 0, 0, 0.425));
 
     a:hover{
         color: var(--sub-main2);
     }
 }
 
+img{
+    max-width: none;
+}
+
 @media screen and (max-width:569px){
+    
     header{
         nav{
-            background-color: var(--sub-sub1);
+            background-image: linear-gradient(45deg, var(--sub-sub1), var(--main-main2));
             filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
         }
+    }
+
+    footer{
+        background-image: linear-gradient(45deg, var(--sub-sub1), var(--main-main2));
     }
 
     footer[title='home']{
@@ -101,43 +111,45 @@ footer{
 @media screen and (min-width:570px){
     header{
         nav{
-            background-color: var(--sub-sub1);
+            background-image: linear-gradient(45deg, var(--sub-sub1), var(--main-main2));
             filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
         }
     }
 
     header[title='home']{
-        position: absolute;
-        min-height: 100vh; 
-        width: 35px;
-        margin: auto 0;
+    //     position: absolute;
+    //     min-height: 100vh; 
+    //     width: 35px;
+    //     margin: auto 0;
 
         nav{
-            filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
-            background-color: var(--sub-sub1);
-            flex-flow: column wrap-reverse;
-            color: var(--sub-ac);
-            position: absolute;
-            right: 35px;
-            transform-origin: right top;
-            transform: rotate(-90deg );
-            width: 100vh;
-            height: 35px;
-            text-align: right;
+            height: 41px;
+    //         filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.425));
+    //         background-color: var(--sub-sub1);
+    //         flex-flow: column wrap-reverse;
+    //         color: var(--sub-ac);
+    //         position: absolute;
+    //         right: 35px;
+    //         transform-origin: right top;
+    //         transform: rotate(-90deg );
+    //         width: 100vh;
+    //         height: 35px;
+    //         text-align: right;
 
-            a:hover{
-                color: var(--sub-main2);
-            }
+    //         a:hover{
+    //             color: var(--sub-main2);
+    //         }
 
-            .App-logo{
-                margin: auto 10px auto 0;
-                text-align: right;
-            }
+    //         .App-logo{
+    //             margin: auto 10px auto 0;
+    //             text-align: right;
+    //         }
         }
     }
     
     main[page='home']{
-        margin: 0 0 0 35px;
+        // margin: 0 0 0 35px;
+        margin: 0;
         overflow: scroll;
         height: 100vh !important;
         
@@ -150,19 +162,41 @@ footer{
 
     footer{
         display: block;
+        background-image: linear-gradient(45deg, var(--sub-sub1), var(--main-main2));
     }
 
     footer[title='home']{
         display: none;
     }
 
+    // main[page='home'] #contact{
+    //     div[page='contact']{
+    //         div{
+    //         }
+
+    //         div:hover{
+    //             right: 5px;
+    //         }
+    //     }
+    // }
+
     main[page='home'] #contact{
+        width: 100vw;
+        position: absolute;
+        height: auto;
+
         div[page='contact']{
+            top: -38px;
+            right: 5px;
+
             div{
+                display: inline;
+                margin: 0 3px;
+                vertical-align: bottom;
             }
 
             div:hover{
-                left: 5px;
+                top:43px;
             }
         }
     }

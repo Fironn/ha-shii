@@ -21,6 +21,7 @@ const Blogs = ({ data }) => {
                     <h3>
                       {node.frontmatter.title}
                     </h3>
+                    <hr />
                     <p className={styles.date}>{node.frontmatter.date}</p>
                     <p className={styles.small}>{node.excerpt}</p>
                   </div>

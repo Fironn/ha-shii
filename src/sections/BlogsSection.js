@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import { useStaticQuery, Link, graphql } from "gatsby"
@@ -30,9 +30,11 @@ const BlogsSection = () => {
 
   return (
     <SectionContainer id="blogs">
-      <SectionHeader text="blogs" />
-      <Link to="/blogs/" className={styles.link}>
-        see more
+      <Link to="/blogs/">
+        <SectionHeader text="blogs" />
+        <div className={styles.link}>
+          see more
+        </div>
       </Link>
       <div className={styles.lists}>
         {data.allMarkdownRemark.edges.map(({ node }) => {
@@ -44,6 +46,7 @@ const BlogsSection = () => {
                     <h3>
                       {node.frontmatter.title}
                     </h3>
+                    <hr />
                     <p className={styles.date}>{node.frontmatter.date}</p>
                     <p className={styles.small}>{node.excerpt}</p>
                   </div>
@@ -51,6 +54,7 @@ const BlogsSection = () => {
               </Link>
             </div>
           );
+          else return;
         })}
       </div>
     </SectionContainer>

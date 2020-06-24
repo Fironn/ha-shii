@@ -10,7 +10,7 @@ const Chart = ({ data }) => {
 
     const titleList = ["projects", "health", "music", "iot"];
 
-    const color = ["#c01921", "#cb8e34", "#005f8b", "#35713e"]
+    const color = ["#3e3a39", "#cb8e34", "#005f8b", "#35713e"]
 
 
     // const getImg = src => {
@@ -46,10 +46,10 @@ const Chart = ({ data }) => {
         }),
     }
     dataList.nodes.push(
-        { id: "projects", title: "", category: "projects", val: 4, thumbnail: ``, },
-        { id: "health", title: "Health", category: "health", val: 10, thumbnail: ``, },
-        { id: "iot", title: "IoT", category: "iot", val: 10, thumbnail: ``, },
-        { id: "music", title: "Music", category: "music", val: 10, thumbnail: ``, },
+        { id: "projects", title: "", category: "projects", val: 2, thumbnail: `gatsby.png`, },
+        { id: "health", title: "Health", category: "health", val: 10, thumbnail: `gatsby.png`, },
+        { id: "iot", title: "IoT", category: "iot", val: 10, thumbnail: `gatsby.png`, },
+        { id: "music", title: "Music", category: "music", val: 10, thumbnail: `gatsby.png`, },
     );
     dataList.links.push(
         { source: "projects", target: "health" },
@@ -59,17 +59,18 @@ const Chart = ({ data }) => {
 
     const canvasObject = function (node, ctx, globalScale, shadow) {
         const label = node.title;
-        const fontSize = 20 / globalScale;
+        const fontSize = 250 / globalScale / node.val;
         ctx.font = `${fontSize}px Sans-Serif`;
         // const textWidth = ctx.measureText(label).width;
         // const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.val, 0, 2 * Math.PI, false);
-        if (titleList.indexOf(node.category) === -1) ctx.fillStyle = "white";
-        else ctx.fillStyle = color[titleList.indexOf(node.category)];
-        ctx.fill();
+        // ctx.arc(node.x, node.y, node.val, 0, 2 * Math.PI, false);
+        // if (titleList.indexOf(node.category) === -1) ctx.fillStyle = "white";
+        // else ctx.fillStyle = color[titleList.indexOf(node.category)];
+        // ctx.fill();
         // ctx.drawImage(node.thumbnail, node.x, node.y);
-        ctx.fillStyle = "black";
+        if (titleList.indexOf(node.category) === -1) ctx.fillStyle = "black";
+        else ctx.fillStyle = color[titleList.indexOf(node.category)];
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         if (titleList.indexOf(node.id) === -1) ctx.font = "14px";
@@ -79,18 +80,20 @@ const Chart = ({ data }) => {
 
     var nodeDetail =
         <div id="graph-tag">
-            <div id="img"><Images filename="" className="imgObj" /></div>
-            <div id="title">Title</div>
-            <div id="subdetail">
-                <span id="date">Date</span>
-                <span id="category">Category</span>
-                <span id="event">Event</span>
+            <div id="img"><Images filename="gatsby.png" className="imgObj" /></div>
+            <div id="detail-div">
+                <div id="title">Title</div>
+                <div id="subdetail">
+                    {/* <span id="date">Date</span> */}
+                    {/* <span id="category">Category</span> */}
+                    <span id="event">Event</span>
+                </div>
+                <hr />
+                <div id="detail">Detail</div>
             </div>
-            <hr />
-            <div id="detail">Detail</div>
             <Link to="/projects/">
                 <div id="link">
-                    more
+                    MORE
                 </div>
             </Link>
         </div >
@@ -102,17 +105,19 @@ const Chart = ({ data }) => {
             nodeDetail =
                 <div id="graph-tag">
                     <div id="img"><Images filename={nodeId.thumbnail} className="imgObj" /></div>
-                    <div id="title">{nodeId.title}</div>
-                    <div id="subdetail">
-                        <span id="date">{nodeId.date}</span>
-                        <span id="category">{nodeId.category}</span>
-                        <span id="event">{nodeId.event}</span>
+                    <div id="detail-div">
+                        <div id="title">{nodeId.title}</div>
+                        <div id="subdetail">
+                            {/* <span id="date">{nodeId.date}</span> */}
+                            {/* <span id="category">{nodeId.category}</span> */}
+                            <span id="event">{nodeId.event}</span>
+                        </div>
+                        <hr />
+                        <div id="detail">{nodeId.overview}</div>
                     </div>
-                    <hr />
-                    <div id="detail">{nodeId.overview}</div>
                     <Link to={"/" + nodeId.id}>
                         <div id="link">
-                            more
+                            MORE
                         </div>
                     </Link>
                 </div>
@@ -121,8 +126,10 @@ const Chart = ({ data }) => {
             nodeDetail =
                 <div id="graph-tag" title="main">
                     <div id="img"><Images filename={nodeId.thumbnail} className="imgObj" /></div>
-                    <div id="title">{nodeId.title}</div>
-                    <div id="detail">{nodeId.overview}</div>
+                    <div id="detail-div">
+                        <div id="title">{nodeId.title}</div>
+                        <div id="detail">{nodeId.overview}</div>
+                    </div>
                 </div>
                 ;
         }
@@ -137,17 +144,19 @@ const Chart = ({ data }) => {
                     render(
                         <div id="graph-tag">
                             <div id="img"><Images filename={nodeId.thumbnail} className="imgObj" /></div>
-                            <div id="title">{nodeId.title}</div>
-                            <div id="subdetail">
-                                <span id="date">{nodeId.date}</span>
-                                <span id="category">{nodeId.category}</span>
-                                <span id="event">{nodeId.event}</span>
+                            <div id="detail-div">
+                                <div id="title">{nodeId.title}</div>
+                                <div id="subdetail">
+                                    {/* <span id="date">{nodeId.date}</span> */}
+                                    {/* <span id="category">{nodeId.category}</span> */}
+                                    <span id="event">{nodeId.event}</span>
+                                </div>
+                                <hr />
+                                <div id="detail">{nodeId.overview}</div>
                             </div>
-                            <hr />
-                            <div id="detail">{nodeId.overview}</div>
                             <Link to={"/" + nodeId.id}>
                                 <div id="link">
-                                    more
+                                    MORE
                                 </div>
                             </Link>
                         </div>
@@ -157,8 +166,10 @@ const Chart = ({ data }) => {
                     render(
                         <div id="graph-tag" title="main">
                             <div id="img"><Images filename={nodeId.thumbnail} className="imgObj" /></div>
-                            <div id="title">{nodeId.title}</div>
-                            <div id="detail">{nodeId.overview}</div>
+                            <div id="detail-div">
+                                <div id="title">{nodeId.title}</div>
+                                <div id="detail">{nodeId.overview}</div>
+                            </div>
                         </div>
                         , document.getElementById("graph-tag")
                     );
@@ -183,10 +194,11 @@ const Chart = ({ data }) => {
                         enableZoomPanInteraction={false}
                         width={468}
                         height={500}
-                        linkWidth={2}
+                        linkWidth={3}
+                        linkVisibility={false}
                     />
                 </MediaQuery>
-                <MediaQuery query="(min-width: 768px)">
+                <MediaQuery query="(min-width: 570px)">
                     <ForceGraph2D
                         id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
                         graphData={dataList}
@@ -196,7 +208,8 @@ const Chart = ({ data }) => {
                         enableZoomPanInteraction={false}
                         width={800}
                         height={500}
-                        linkWidth={2}
+                        linkVisibility={false}
+                        linkWidth={3}
                     />
                 </MediaQuery>
             </div>

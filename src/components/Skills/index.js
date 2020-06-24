@@ -17,7 +17,7 @@ const Skill = ({ skillName, skillLevel }) => {
     return (
         <div className="container">
             <div className="name">{skillName}</div>
-            <div className="stars">
+            <div className="stars" style={{ fontSize: '16px' }}>
                 <Stars countOfStars={skillLevel} />
             </div>
         </div>
