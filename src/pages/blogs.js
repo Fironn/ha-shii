@@ -10,9 +10,9 @@ const Blogs = ({ data }) => {
     <Layout page="blogs">
       {/* <Top title="Blogs" /> */}
       <SEO title="Blogs" />
-      <div className={styles.detail}>
+      <div className={styles.detail} title="blogs">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        <div className={styles.lists}>
+        <div className={styles.lists} page="blogs">
           {data.allMarkdownRemark.edges.map(({ node }) => {
             return (
               <div key={node.id}>

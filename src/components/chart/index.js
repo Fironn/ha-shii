@@ -1,10 +1,12 @@
 import React from 'react';
 import './chart.scss'
-import ForceGraph2D from 'react-force-graph-2d';
 import { Link } from "gatsby"
 import Images from '../image'
 import { render } from 'react-dom';
 import MediaQuery from 'react-responsive';
+// const ForceGraph2D = typeof window !== `undefined` ? require("react-force-graph-2d") : null
+import ForceGraph2D from 'react-force-graph-2d';
+
 
 const Chart = ({ data }) => {
 

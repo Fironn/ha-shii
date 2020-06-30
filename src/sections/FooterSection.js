@@ -40,8 +40,8 @@ const FooterSection = () => {
       {/* <SectionContainer id="contact"> */}
       {/* <SectionHeader text="contact" /> */}
       <div className={styles.contactLinks} page="contact">
-        {info.map(info => (
-          <div className={styles.contactLink} >
+        {info.map((info, index) => (
+          <div className={styles.contactLink} key={index}>
             <a href={info.link} key={info.description}>
               <img src={info.icon} className={styles.icon} page={info.description} height="40px" alt="" />
               {/* <p>{info.description}</p> */}

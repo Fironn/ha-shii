@@ -70,6 +70,17 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: `G-21W6R2HWDB`,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-twitter`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
