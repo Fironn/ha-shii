@@ -7,7 +7,7 @@ const TopSection = () => {
   return (
     <section id="home" className={styles.container + " " + styles.top}>
       <div>
-        はっしー's スタジオ
+        しほみスタジオ
       </div>
       <LinkForScroll
         to="about"

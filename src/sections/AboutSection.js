@@ -37,10 +37,10 @@ const AboutSection = () => {
       <div className={styles.profile}>
         <div className={styles.profileDetails}>
           <img src={profileJpg} className={styles.icon} height="120px" alt="" />
-          <p className={styles.profileName}>はっしー</p>
+          <p className={styles.profileName}>しほみ</p>
           <hr />
           <p className={styles.profileMain}>
-            某大学コンピュータ理工学部2年。趣味は電子工作、特技はおりがみ。
+            某大学コンピュータ理工学部3年。趣味は電子工作、特技はおりがみ。
             大学入学からプログラミングを始め、複数のプロコン/ハッカソンに参加。
             主にWebアプリとIoTデバイス関連を開発。「IT×健康×音楽」をテーマに活動している
           </p>

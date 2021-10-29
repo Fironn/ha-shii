@@ -11,24 +11,14 @@ import ForceGraph2D from 'react-force-graph-2d';
 const Chart = ({ data }) => {
 
     const titleList = ["projects", "health", "music", "iot"];
-
     const color = ["#3e3a39", "#cb8e34", "#005f8b", "#35713e"]
-
-
-    // const getImg = src => {
-    //     const img = <img alt="" />;
-    //     img.src = `../../images/${src}`;
-    //     img.width = 13;
-    //     img.height = 13;
-    //     return img;
-    // }
 
     var dataList = {
         nodes: data.allMarkdownRemark.edges.map(({ node }) => {
             return (
                 {
                     id: node.frontmatter.path,
-                    category: node.frontmatter.category[0],
+                    category: node.frontmatter.category ? node.frontmatter.category[0] : 0,
                     thumbnail: node.frontmatter.thumbnail,
                     title: node.frontmatter.title,
                     date: node.frontmatter.date,
@@ -41,7 +31,7 @@ const Chart = ({ data }) => {
         links: data.allMarkdownRemark.edges.map(({ node }) => {
             return (
                 {
-                    source: node.frontmatter.category[0],
+                    source: node.frontmatter.category ? node.frontmatter.category[0] : 0,
                     target: node.frontmatter.path,
                 }
             );
@@ -183,38 +173,42 @@ const Chart = ({ data }) => {
 
     return (
         <div id="graph">
-            <div id="graph-tag">
-            </div>
-            <div id="graph-canvas">
-                <MediaQuery query="(max-width: 767px)">
-                    <ForceGraph2D
-                        id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
-                        graphData={dataList}
-                        onNodeHover={onNodeHover}
-                        onNodeClick={onNodeClick}
-                        nodeCanvasObject={canvasObject}
-                        enableZoomPanInteraction={false}
-                        width={468}
-                        height={500}
-                        linkWidth={3}
-                        linkVisibility={false}
-                    />
-                </MediaQuery>
-                <MediaQuery query="(min-width: 570px)">
-                    <ForceGraph2D
-                        id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
-                        graphData={dataList}
-                        onNodeHover={onNodeHover}
-                        onNodeClick={onNodeClick}
-                        nodeCanvasObject={canvasObject}
-                        enableZoomPanInteraction={false}
-                        width={800}
-                        height={500}
-                        linkVisibility={false}
-                        linkWidth={3}
-                    />
-                </MediaQuery>
-            </div>
+            {ForceGraph2D ?
+                <>< div id="graph-tag" >
+                </div >
+                    <div id="graph-canvas">
+                        <MediaQuery query="(max-width: 571px)">
+                            <ForceGraph2D
+                                id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
+                                graphData={dataList}
+                                onNodeHover={onNodeHover}
+                                onNodeClick={onNodeClick}
+                                nodeCanvasObject={canvasObject}
+                                enableZoomPanInteraction={false}
+                                width={500}
+                                height={300}
+                                linkWidth={3}
+                                linkVisibility={false}
+                            />
+                        </MediaQuery>
+                        <MediaQuery query="(min-width: 570px)">
+                            <ForceGraph2D
+                                id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
+                                graphData={dataList}
+                                onNodeHover={onNodeHover}
+                                onNodeClick={onNodeClick}
+                                nodeCanvasObject={canvasObject}
+                                enableZoomPanInteraction={false}
+                                width={500}
+                                height={300}
+                                linkVisibility={false}
+                                linkWidth={3}
+                            />
+                        </MediaQuery>
+                    </div></>
+                :
+                <></>
+            }
         </div >
     );
 }

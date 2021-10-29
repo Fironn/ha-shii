@@ -1,0 +1,57 @@
+.container {
+    // display: block;
+    align-items: center;
+    // padding:90px 20px 40px;
+    background-color: var(--sub-ac);
+    text-align: left;
+
+    h2{
+        color: var(--sub-sub1);
+        position: relative;
+        margin: 0 0 0 50px;    
+    }
+}
+
+section{
+    // flex: 4 none 400px !important;
+}
+
+@media screen and (max-width:569px){
+    .container{
+        // padding:60px 7px 0;
+    }
+}
+
+#graph{
+    width: 100vw;
+    text-align: left;
+    background-color:var(--main-tri1);
+    margin: 0;
+    box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.356) inset;
+    // border-bottom: solid 1px var(--sub-tri3);
+    overflow: hidden;
+    padding: 0;
+    color: var(--main-tri1);
+
+    #graph-canvas{
+        z-index: 99997;
+        position: relative;
+        background-color: transparent;
+        height: 540px;
+        width: 200px;
+        // filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.281));
+        left: -300px;
+
+        div{
+            overflow: hidden;
+        }
+
+        .graph-tooltip{
+            display: none;
+        }
+    }
+
+    #graph-tag{
+        width: 100px;
+    }
+}

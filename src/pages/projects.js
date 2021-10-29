@@ -12,7 +12,7 @@ const Projects = ({ data }) => {
     <Layout page="projects">
       {/* <Top title="Projects" /> */}
       <SEO title="Projects" />
-      <Chart className={styles.chart} data={data} />
+      {/* <Chart className={styles.chart} data={data} /> */}
       <div className={styles.detail} title="projects">
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         <div className={styles.lists} page="projects">

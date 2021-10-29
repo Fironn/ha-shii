@@ -8,7 +8,7 @@ import styles from "../styles/section.module.scss"
 
 const BlogsSection = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query  {
       allMarkdownRemark (filter: {frontmatter: {path: {regex: "/blogs/"}}}){
         totalCount
         edges {

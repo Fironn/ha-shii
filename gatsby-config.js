@@ -1,18 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `はっしー's スタジオ`,
-    description: `Ha-shii no portfolio.`,
+    title: `しほみスタジオ`,
+    description: `Shihomi no portfolio.`,
     author: `@ha_shii_`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -25,6 +18,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        checkSupportedExtensions: false,
       },
     },
     {
@@ -61,6 +55,24 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          'gatsby-remark-static-images',
+          {
+            resolve: "gatsby-remark-embed-video",
+            options: {
+              width: 800,
+              height: 450,
+              related: false,
+              noIframeBorder: true,
+              allowfullscreen: true
+            }
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
+          `gatsby-remark-prismjs`,
         ],
       },
     },
