@@ -40,7 +40,7 @@
     "react-responsive": "^8.0.3",
     "react-scroll": "^1.7.16",
     "react-typography": "^0.16.19",
-    "sharp": "^0.29.2",
+    "sharp": "^0.30.5",
     "ssr-window": "^4.0.1",
     "typeface-lato": "0.0.75",
     "typeface-meera-inimai": "0.0.71",
